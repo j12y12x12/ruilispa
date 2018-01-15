@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD26D200CD02100CD3E1E /* AppDelegate.m */; };
+		91FAD271200CD02100CD3E1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD270200CD02100CD3E1E /* ViewController.m */; };
+		91FAD274200CD02100CD3E1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD272200CD02100CD3E1E /* Main.storyboard */; };
+		91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD275200CD02100CD3E1E /* Assets.xcassets */; };
+		91FAD279200CD02100CD3E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD277200CD02100CD3E1E /* LaunchScreen.storyboard */; };
+		91FAD27C200CD02100CD3E1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD27B200CD02100CD3E1E /* main.m */; };
+		91FAD286200CD02100CD3E1E /* ruilispaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD285200CD02100CD3E1E /* ruilispaTests.m */; };
+		91FAD291200CD02100CD3E1E /* ruilispaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD290200CD02100CD3E1E /* ruilispaUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91FAD282200CD02100CD3E1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91FAD261200CD02100CD3E1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91FAD268200CD02100CD3E1E;
+			remoteInfo = ruilispa;
+		};
+		91FAD28D200CD02100CD3E1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91FAD261200CD02100CD3E1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91FAD268200CD02100CD3E1E;
+			remoteInfo = ruilispa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		91FAD269200CD02100CD3E1E /* ruilispa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruilispa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FAD26C200CD02100CD3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		91FAD26D200CD02100CD3E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		91FAD26F200CD02100CD3E1E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		91FAD270200CD02100CD3E1E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		91FAD273200CD02100CD3E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91FAD275200CD02100CD3E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91FAD278200CD02100CD3E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91FAD27A200CD02100CD3E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FAD27B200CD02100CD3E1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		91FAD281200CD02100CD3E1E /* ruilispaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ruilispaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FAD285200CD02100CD3E1E /* ruilispaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ruilispaTests.m; sourceTree = "<group>"; };
+		91FAD287200CD02100CD3E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FAD28C200CD02100CD3E1E /* ruilispaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ruilispaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FAD290200CD02100CD3E1E /* ruilispaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ruilispaUITests.m; sourceTree = "<group>"; };
+		91FAD292200CD02100CD3E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91FAD266200CD02100CD3E1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FAD27E200CD02100CD3E1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FAD289200CD02100CD3E1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91FAD260200CD02100CD3E1E = {
+			isa = PBXGroup;
+			children = (
+				91FAD26B200CD02100CD3E1E /* ruilispa */,
+				91FAD284200CD02100CD3E1E /* ruilispaTests */,
+				91FAD28F200CD02100CD3E1E /* ruilispaUITests */,
+				91FAD26A200CD02100CD3E1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91FAD26A200CD02100CD3E1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91FAD269200CD02100CD3E1E /* ruilispa.app */,
+				91FAD281200CD02100CD3E1E /* ruilispaTests.xctest */,
+				91FAD28C200CD02100CD3E1E /* ruilispaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91FAD26B200CD02100CD3E1E /* ruilispa */ = {
+			isa = PBXGroup;
+			children = (
+				91FAD26C200CD02100CD3E1E /* AppDelegate.h */,
+				91FAD26D200CD02100CD3E1E /* AppDelegate.m */,
+				91FAD26F200CD02100CD3E1E /* ViewController.h */,
+				91FAD270200CD02100CD3E1E /* ViewController.m */,
+				91FAD272200CD02100CD3E1E /* Main.storyboard */,
+				91FAD275200CD02100CD3E1E /* Assets.xcassets */,
+				91FAD277200CD02100CD3E1E /* LaunchScreen.storyboard */,
+				91FAD27A200CD02100CD3E1E /* Info.plist */,
+				91FAD27B200CD02100CD3E1E /* main.m */,
+			);
+			path = ruilispa;
+			sourceTree = "<group>";
+		};
+		91FAD284200CD02100CD3E1E /* ruilispaTests */ = {
+			isa = PBXGroup;
+			children = (
+				91FAD285200CD02100CD3E1E /* ruilispaTests.m */,
+				91FAD287200CD02100CD3E1E /* Info.plist */,
+			);
+			path = ruilispaTests;
+			sourceTree = "<group>";
+		};
+		91FAD28F200CD02100CD3E1E /* ruilispaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				91FAD290200CD02100CD3E1E /* ruilispaUITests.m */,
+				91FAD292200CD02100CD3E1E /* Info.plist */,
+			);
+			path = ruilispaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91FAD268200CD02100CD3E1E /* ruilispa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91FAD295200CD02100CD3E1E /* Build configuration list for PBXNativeTarget "ruilispa" */;
+			buildPhases = (
+				91FAD265200CD02100CD3E1E /* Sources */,
+				91FAD266200CD02100CD3E1E /* Frameworks */,
+				91FAD267200CD02100CD3E1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ruilispa;
+			productName = ruilispa;
+			productReference = 91FAD269200CD02100CD3E1E /* ruilispa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91FAD280200CD02100CD3E1E /* ruilispaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91FAD298200CD02100CD3E1E /* Build configuration list for PBXNativeTarget "ruilispaTests" */;
+			buildPhases = (
+				91FAD27D200CD02100CD3E1E /* Sources */,
+				91FAD27E200CD02100CD3E1E /* Frameworks */,
+				91FAD27F200CD02100CD3E1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91FAD283200CD02100CD3E1E /* PBXTargetDependency */,
+			);
+			name = ruilispaTests;
+			productName = ruilispaTests;
+			productReference = 91FAD281200CD02100CD3E1E /* ruilispaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		91FAD28B200CD02100CD3E1E /* ruilispaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91FAD29B200CD02100CD3E1E /* Build configuration list for PBXNativeTarget "ruilispaUITests" */;
+			buildPhases = (
+				91FAD288200CD02100CD3E1E /* Sources */,
+				91FAD289200CD02100CD3E1E /* Frameworks */,
+				91FAD28A200CD02100CD3E1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91FAD28E200CD02100CD3E1E /* PBXTargetDependency */,
+			);
+			name = ruilispaUITests;
+			productName = ruilispaUITests;
+			productReference = 91FAD28C200CD02100CD3E1E /* ruilispaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91FAD261200CD02100CD3E1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = ruili;
+				TargetAttributes = {
+					91FAD268200CD02100CD3E1E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					91FAD280200CD02100CD3E1E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 91FAD268200CD02100CD3E1E;
+					};
+					91FAD28B200CD02100CD3E1E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 91FAD268200CD02100CD3E1E;
+					};
+				};
+			};
+			buildConfigurationList = 91FAD264200CD02100CD3E1E /* Build configuration list for PBXProject "ruilispa" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91FAD260200CD02100CD3E1E;
+			productRefGroup = 91FAD26A200CD02100CD3E1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91FAD268200CD02100CD3E1E /* ruilispa */,
+				91FAD280200CD02100CD3E1E /* ruilispaTests */,
+				91FAD28B200CD02100CD3E1E /* ruilispaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91FAD267200CD02100CD3E1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FAD279200CD02100CD3E1E /* LaunchScreen.storyboard in Resources */,
+				91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */,
+				91FAD274200CD02100CD3E1E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FAD27F200CD02100CD3E1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FAD28A200CD02100CD3E1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91FAD265200CD02100CD3E1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FAD271200CD02100CD3E1E /* ViewController.m in Sources */,
+				91FAD27C200CD02100CD3E1E /* main.m in Sources */,
+				91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FAD27D200CD02100CD3E1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FAD286200CD02100CD3E1E /* ruilispaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FAD288200CD02100CD3E1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FAD291200CD02100CD3E1E /* ruilispaUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91FAD283200CD02100CD3E1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91FAD268200CD02100CD3E1E /* ruilispa */;
+			targetProxy = 91FAD282200CD02100CD3E1E /* PBXContainerItemProxy */;
+		};
+		91FAD28E200CD02100CD3E1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91FAD268200CD02100CD3E1E /* ruilispa */;
+			targetProxy = 91FAD28D200CD02100CD3E1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		91FAD272200CD02100CD3E1E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91FAD273200CD02100CD3E1E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		91FAD277200CD02100CD3E1E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91FAD278200CD02100CD3E1E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91FAD293200CD02100CD3E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		91FAD294200CD02100CD3E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91FAD296200CD02100CD3E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52567B56W3;
+				INFOPLIST_FILE = ruilispa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91FAD297200CD02100CD3E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52567B56W3;
+				INFOPLIST_FILE = ruilispa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91FAD299200CD02100CD3E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ruilispaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ruilispa.app/ruilispa";
+			};
+			name = Debug;
+		};
+		91FAD29A200CD02100CD3E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ruilispaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ruilispa.app/ruilispa";
+			};
+			name = Release;
+		};
+		91FAD29C200CD02100CD3E1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ruilispaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ruilispa;
+			};
+			name = Debug;
+		};
+		91FAD29D200CD02100CD3E1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ruilispaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ruilispa;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91FAD264200CD02100CD3E1E /* Build configuration list for PBXProject "ruilispa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91FAD293200CD02100CD3E1E /* Debug */,
+				91FAD294200CD02100CD3E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91FAD295200CD02100CD3E1E /* Build configuration list for PBXNativeTarget "ruilispa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91FAD296200CD02100CD3E1E /* Debug */,
+				91FAD297200CD02100CD3E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91FAD298200CD02100CD3E1E /* Build configuration list for PBXNativeTarget "ruilispaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91FAD299200CD02100CD3E1E /* Debug */,
+				91FAD29A200CD02100CD3E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91FAD29B200CD02100CD3E1E /* Build configuration list for PBXNativeTarget "ruilispaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91FAD29C200CD02100CD3E1E /* Debug */,
+				91FAD29D200CD02100CD3E1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91FAD261200CD02100CD3E1E /* Project object */;
+}
