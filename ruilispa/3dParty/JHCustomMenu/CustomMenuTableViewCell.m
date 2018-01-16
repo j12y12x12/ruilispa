@@ -8,6 +8,15 @@
 
 #import "CustomMenuTableViewCell.h"
 
+//依据应用横竖屏
+#ifndef SCREEN_HEIGHT
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#endif
+
+
+#ifndef SCREEN_WIDTH
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#endif
 @implementation CustomMenuTableViewCell
 
 - (void)awakeFromNib {

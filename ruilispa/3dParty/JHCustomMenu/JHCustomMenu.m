@@ -16,6 +16,14 @@
 #define kScreenHeight        [UIScreen mainScreen].bounds.size.height
 #define kDuration 0.2
 
+//16进制颜色
+#define HEX_COLOR(c) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:((c)&0xFF)/255.0 alpha:1.0]
+
+#define HEX_COLOR_ALPHA(c,a) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:((c)&0xFF)/255.0 alpha:a]
+
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+
 
 @interface JHCustomMenu()
 @property (nonatomic, assign) CGPoint origin;

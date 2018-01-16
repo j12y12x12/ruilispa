@@ -15,11 +15,10 @@
 		914EB85B200D986B007E6EE4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 914EB850200D986B007E6EE4 /* Info.plist */; };
 		914EB85C200D986B007E6EE4 /* JHCustomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB854200D986B007E6EE4 /* JHCustomMenu.m */; };
 		914EB85D200D986B007E6EE4 /* CustomMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB855200D986B007E6EE4 /* CustomMenuTableViewCell.m */; };
+		916EF46C200E3D7D001CBB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916EF46B200E3D7D001CBB6D /* LaunchScreen.storyboard */; };
 		91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD26D200CD02100CD3E1E /* AppDelegate.m */; };
-		91FAD271200CD02100CD3E1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD270200CD02100CD3E1E /* ViewController.m */; };
-		91FAD274200CD02100CD3E1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD272200CD02100CD3E1E /* Main.storyboard */; };
+		91FAD271200CD02100CD3E1E /* YXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD270200CD02100CD3E1E /* YXViewController.m */; };
 		91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD275200CD02100CD3E1E /* Assets.xcassets */; };
-		91FAD279200CD02100CD3E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD277200CD02100CD3E1E /* LaunchScreen.storyboard */; };
 		91FAD27C200CD02100CD3E1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD27B200CD02100CD3E1E /* main.m */; };
 		91FAD286200CD02100CD3E1E /* ruilispaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD285200CD02100CD3E1E /* ruilispaTests.m */; };
 		91FAD291200CD02100CD3E1E /* ruilispaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD290200CD02100CD3E1E /* ruilispaUITests.m */; };
@@ -59,14 +58,13 @@
 		914EB853200D986B007E6EE4 /* CustomMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuTableViewCell.h; sourceTree = "<group>"; };
 		914EB854200D986B007E6EE4 /* JHCustomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCustomMenu.m; sourceTree = "<group>"; };
 		914EB855200D986B007E6EE4 /* CustomMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenuTableViewCell.m; sourceTree = "<group>"; };
+		916EF46B200E3D7D001CBB6D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91FAD269200CD02100CD3E1E /* ruilispa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruilispa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FAD26C200CD02100CD3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91FAD26D200CD02100CD3E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		91FAD26F200CD02100CD3E1E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		91FAD270200CD02100CD3E1E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		91FAD273200CD02100CD3E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91FAD26F200CD02100CD3E1E /* YXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXViewController.h; sourceTree = "<group>"; };
+		91FAD270200CD02100CD3E1E /* YXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXViewController.m; sourceTree = "<group>"; };
 		91FAD275200CD02100CD3E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		91FAD278200CD02100CD3E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91FAD27A200CD02100CD3E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91FAD27B200CD02100CD3E1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		91FAD281200CD02100CD3E1E /* ruilispaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ruilispaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,13 +165,12 @@
 				914EB843200D9851007E6EE4 /* 3dParty */,
 				91FAD26C200CD02100CD3E1E /* AppDelegate.h */,
 				91FAD26D200CD02100CD3E1E /* AppDelegate.m */,
-				91FAD26F200CD02100CD3E1E /* ViewController.h */,
-				91FAD270200CD02100CD3E1E /* ViewController.m */,
-				91FAD272200CD02100CD3E1E /* Main.storyboard */,
+				91FAD26F200CD02100CD3E1E /* YXViewController.h */,
+				91FAD270200CD02100CD3E1E /* YXViewController.m */,
 				91FAD275200CD02100CD3E1E /* Assets.xcassets */,
-				91FAD277200CD02100CD3E1E /* LaunchScreen.storyboard */,
 				91FAD27A200CD02100CD3E1E /* Info.plist */,
 				91FAD27B200CD02100CD3E1E /* main.m */,
+				916EF46B200E3D7D001CBB6D /* LaunchScreen.storyboard */,
 			);
 			path = ruilispa;
 			sourceTree = "<group>";
@@ -302,10 +299,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916EF46C200E3D7D001CBB6D /* LaunchScreen.storyboard in Resources */,
 				914EB85B200D986B007E6EE4 /* Info.plist in Resources */,
-				91FAD279200CD02100CD3E1E /* LaunchScreen.storyboard in Resources */,
 				91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */,
-				91FAD274200CD02100CD3E1E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +328,7 @@
 			files = (
 				914EB85C200D986B007E6EE4 /* JHCustomMenu.m in Sources */,
 				914EB85D200D986B007E6EE4 /* CustomMenuTableViewCell.m in Sources */,
-				91FAD271200CD02100CD3E1E /* ViewController.m in Sources */,
+				91FAD271200CD02100CD3E1E /* YXViewController.m in Sources */,
 				914EB856200D986B007E6EE4 /* FMDatabaseQueue.m in Sources */,
 				91FAD27C200CD02100CD3E1E /* main.m in Sources */,
 				914EB858200D986B007E6EE4 /* FMDatabase.m in Sources */,
@@ -373,25 +369,6 @@
 			targetProxy = 91FAD28D200CD02100CD3E1E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		91FAD272200CD02100CD3E1E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91FAD273200CD02100CD3E1E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		91FAD277200CD02100CD3E1E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91FAD278200CD02100CD3E1E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		91FAD293200CD02100CD3E1E /* Debug */ = {
@@ -502,9 +479,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52567B56W3;
 				INFOPLIST_FILE = ruilispa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,9 +495,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52567B56W3;
 				INFOPLIST_FILE = ruilispa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispa;
 				PRODUCT_NAME = "$(TARGET_NAME)";

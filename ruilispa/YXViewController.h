@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  YXViewController.h
 //  ruilispa
 //
 //  Created by jin on 2018/1/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface YXViewController : UIViewController
 
 
 @end
