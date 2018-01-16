@@ -28,6 +28,7 @@
     
     [self.window setRootViewController:rootVC];
 
+    sleep(3);
     return YES;
 }
 
