@@ -17,6 +17,9 @@
 		914EB85D200D986B007E6EE4 /* CustomMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB855200D986B007E6EE4 /* CustomMenuTableViewCell.m */; };
 		916EF46C200E3D7D001CBB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916EF46B200E3D7D001CBB6D /* LaunchScreen.storyboard */; };
 		916EF472200F8650001CBB6D /* UIView+UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF471200F8650001CBB6D /* UIView+UIViewExt.m */; };
+		916EF477200F89A5001CBB6D /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF474200F89A5001CBB6D /* JSDropDownMenu.m */; };
+		916EF478200F89A5001CBB6D /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 916EF475200F89A5001CBB6D /* ico_make.png */; };
+		916EF47F200F9235001CBB6D /* YXDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF47E200F9235001CBB6D /* YXDeviceTools.m */; };
 		91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD26D200CD02100CD3E1E /* AppDelegate.m */; };
 		91FAD271200CD02100CD3E1E /* YXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD270200CD02100CD3E1E /* YXViewController.m */; };
 		91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD275200CD02100CD3E1E /* Assets.xcassets */; };
@@ -63,6 +66,11 @@
 		916EF46E200F846D001CBB6D /* ruilispa_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ruilispa_Prefix.pch; sourceTree = "<group>"; };
 		916EF470200F8650001CBB6D /* UIView+UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewExt.h"; sourceTree = "<group>"; };
 		916EF471200F8650001CBB6D /* UIView+UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewExt.m"; sourceTree = "<group>"; };
+		916EF474200F89A5001CBB6D /* JSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDropDownMenu.m; sourceTree = "<group>"; };
+		916EF475200F89A5001CBB6D /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
+		916EF476200F89A5001CBB6D /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
+		916EF47D200F9235001CBB6D /* YXDeviceTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDeviceTools.h; sourceTree = "<group>"; };
+		916EF47E200F9235001CBB6D /* YXDeviceTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDeviceTools.m; sourceTree = "<group>"; };
 		91FAD269200CD02100CD3E1E /* ruilispa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruilispa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FAD26C200CD02100CD3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91FAD26D200CD02100CD3E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 		914EB843200D9851007E6EE4 /* 3dParty */ = {
 			isa = PBXGroup;
 			children = (
+				916EF473200F89A5001CBB6D /* JSDropDownMenu */,
 				914EB844200D986B007E6EE4 /* fmdb */,
 				914EB851200D986B007E6EE4 /* JHCustomMenu */,
 			);
@@ -152,6 +161,16 @@
 			path = tools;
 			sourceTree = "<group>";
 		};
+		916EF473200F89A5001CBB6D /* JSDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				916EF474200F89A5001CBB6D /* JSDropDownMenu.m */,
+				916EF475200F89A5001CBB6D /* ico_make.png */,
+				916EF476200F89A5001CBB6D /* JSDropDownMenu.h */,
+			);
+			path = JSDropDownMenu;
+			sourceTree = "<group>";
+		};
 		91FAD260200CD02100CD3E1E = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +198,8 @@
 				914EB843200D9851007E6EE4 /* 3dParty */,
 				91FAD26C200CD02100CD3E1E /* AppDelegate.h */,
 				91FAD26D200CD02100CD3E1E /* AppDelegate.m */,
+				916EF47D200F9235001CBB6D /* YXDeviceTools.h */,
+				916EF47E200F9235001CBB6D /* YXDeviceTools.m */,
 				91FAD26F200CD02100CD3E1E /* YXViewController.h */,
 				91FAD270200CD02100CD3E1E /* YXViewController.m */,
 				91FAD275200CD02100CD3E1E /* Assets.xcassets */,
@@ -317,6 +338,7 @@
 				916EF46C200E3D7D001CBB6D /* LaunchScreen.storyboard in Resources */,
 				914EB85B200D986B007E6EE4 /* Info.plist in Resources */,
 				91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */,
+				916EF478200F89A5001CBB6D /* ico_make.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +370,11 @@
 				91FAD27C200CD02100CD3E1E /* main.m in Sources */,
 				914EB858200D986B007E6EE4 /* FMDatabase.m in Sources */,
 				914EB859200D986B007E6EE4 /* FMDatabasePool.m in Sources */,
+				916EF47F200F9235001CBB6D /* YXDeviceTools.m in Sources */,
 				91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */,
 				916EF472200F8650001CBB6D /* UIView+UIViewExt.m in Sources */,
 				914EB85A200D986B007E6EE4 /* FMResultSet.m in Sources */,
+				916EF477200F89A5001CBB6D /* JSDropDownMenu.m in Sources */,
 				914EB857200D986B007E6EE4 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

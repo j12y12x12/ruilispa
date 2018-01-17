@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "YXViewController.h"
+#import "YXDeviceTools.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +29,10 @@
     
     [self.window setRootViewController:rootVC];
 
-    sleep(3);
+    
+    [YXDeviceTools sharedInstance].myScreenWidth = MIN(SCREEN_WIDTH, SCREEN_HEIGHT);
+    [YXDeviceTools sharedInstance].myScreenHight = MAX(SCREEN_WIDTH, SCREEN_HEIGHT);
+
     return YES;
 }
 
