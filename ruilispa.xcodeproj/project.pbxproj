@@ -16,6 +16,7 @@
 		914EB85C200D986B007E6EE4 /* JHCustomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB854200D986B007E6EE4 /* JHCustomMenu.m */; };
 		914EB85D200D986B007E6EE4 /* CustomMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB855200D986B007E6EE4 /* CustomMenuTableViewCell.m */; };
 		916EF46C200E3D7D001CBB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916EF46B200E3D7D001CBB6D /* LaunchScreen.storyboard */; };
+		916EF472200F8650001CBB6D /* UIView+UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF471200F8650001CBB6D /* UIView+UIViewExt.m */; };
 		91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD26D200CD02100CD3E1E /* AppDelegate.m */; };
 		91FAD271200CD02100CD3E1E /* YXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD270200CD02100CD3E1E /* YXViewController.m */; };
 		91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD275200CD02100CD3E1E /* Assets.xcassets */; };
@@ -59,6 +60,9 @@
 		914EB854200D986B007E6EE4 /* JHCustomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCustomMenu.m; sourceTree = "<group>"; };
 		914EB855200D986B007E6EE4 /* CustomMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenuTableViewCell.m; sourceTree = "<group>"; };
 		916EF46B200E3D7D001CBB6D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		916EF46E200F846D001CBB6D /* ruilispa_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ruilispa_Prefix.pch; sourceTree = "<group>"; };
+		916EF470200F8650001CBB6D /* UIView+UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewExt.h"; sourceTree = "<group>"; };
+		916EF471200F8650001CBB6D /* UIView+UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewExt.m"; sourceTree = "<group>"; };
 		91FAD269200CD02100CD3E1E /* ruilispa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruilispa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FAD26C200CD02100CD3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91FAD26D200CD02100CD3E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			path = JHCustomMenu;
 			sourceTree = "<group>";
 		};
+		916EF46F200F8644001CBB6D /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				916EF470200F8650001CBB6D /* UIView+UIViewExt.h */,
+				916EF471200F8650001CBB6D /* UIView+UIViewExt.m */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
 		91FAD260200CD02100CD3E1E = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +175,7 @@
 		91FAD26B200CD02100CD3E1E /* ruilispa */ = {
 			isa = PBXGroup;
 			children = (
+				916EF46F200F8644001CBB6D /* tools */,
 				914EB843200D9851007E6EE4 /* 3dParty */,
 				91FAD26C200CD02100CD3E1E /* AppDelegate.h */,
 				91FAD26D200CD02100CD3E1E /* AppDelegate.m */,
@@ -171,6 +185,7 @@
 				91FAD27A200CD02100CD3E1E /* Info.plist */,
 				91FAD27B200CD02100CD3E1E /* main.m */,
 				916EF46B200E3D7D001CBB6D /* LaunchScreen.storyboard */,
+				916EF46E200F846D001CBB6D /* ruilispa_Prefix.pch */,
 			);
 			path = ruilispa;
 			sourceTree = "<group>";
@@ -334,6 +349,7 @@
 				914EB858200D986B007E6EE4 /* FMDatabase.m in Sources */,
 				914EB859200D986B007E6EE4 /* FMDatabasePool.m in Sources */,
 				91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */,
+				916EF472200F8650001CBB6D /* UIView+UIViewExt.m in Sources */,
 				914EB85A200D986B007E6EE4 /* FMResultSet.m in Sources */,
 				914EB857200D986B007E6EE4 /* FMDatabaseAdditions.m in Sources */,
 			);
@@ -409,6 +425,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ruilispa/ruilispa_Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -462,6 +480,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ruilispa/ruilispa_Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
