@@ -8,6 +8,7 @@
 
 #import "YXViewController.h"
 #import "JSDropDownMenu.h"
+#import "YXAddProjectViewController.h"
 
 @interface YXViewController ()<JSDropDownMenuDataSource,JSDropDownMenuDelegate>
 
@@ -65,38 +66,57 @@
     
     [self.view addSubview:_menu];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
-
-
-}
-
-
-
-- (void)changeRotate
-{
-    [_menu resetMenuFramePortrait];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
     
-    if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationPortrait
-        || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationPortraitUpsideDown) {
-        //竖屏
-        
-        NSLog(@"竖屏");
-    }
-    else if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft)
-    {
-        //横屏禁止侧滑
-        
-        NSLog(@"左横屏");
-        
-    }
-    else if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight)
-    {        
-        NSLog(@"右横屏");
-        
-    }
+    UIButton *addPjtBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    addPjtBtn.frame = CGRectMake(200, 200, 200, 200);
+    
+    [addPjtBtn addTarget:self action:@selector(addProject) forControlEvents:UIControlEventTouchUpInside];
+    
+    addPjtBtn.backgroundColor = [UIColor yellowColor];
 
+    [self.view addSubview:addPjtBtn];
 
 }
+
+- (void)addProject
+{
+    
+    YXAddProjectViewController * addVc = [[YXAddProjectViewController alloc] init];
+    
+    UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:addVc];
+
+    [self presentViewController:navBar animated:YES completion:^{
+        
+    }];
+}
+
+//- (void)changeRotate
+//{
+//    [_menu resetMenuFramePortrait];
+//
+//    if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationPortrait
+//        || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationPortraitUpsideDown) {
+//        //竖屏
+//
+//        NSLog(@"竖屏");
+//    }
+//    else if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft)
+//    {
+//        //横屏禁止侧滑
+//
+//        NSLog(@"左横屏");
+//
+//    }
+//    else if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight)
+//    {
+//        NSLog(@"右横屏");
+//
+//    }
+//
+//
+//}
 
 
 
@@ -156,7 +176,7 @@
         } else{
             
             NSDictionary *menuDic = [_data1 objectAtIndex:leftRow];
-            return [[menuDic objectForKey:@"data"] count];
+            return 1;
         }
     } else if (column==1){
         

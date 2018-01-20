@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>project</key>
+	<dict>
+		<key>面部</key>
+		<dict>
+			<key>面部美颜</key>
+			<string></string>
+		</dict>
+		<key>眼部</key>
+		<dict>
+			<key>Fantasy</key>
+			<string></string>
+			<key>保养系列</key>
+			<string></string>
+		</dict>
+		<key>SPA</key>
+		<dict>
+			<key>全身减压</key>
+			<string></string>
+		</dict>
+		<key>养生</key>
+		<dict>
+			<key>身体调养</key>
+			<string></string>
+		</dict>
+		<key>胸部</key>
+		<dict>
+			<key>减龄</key>
+			<string></string>
+			<key>四维经穴</key>
+			<string></string>
+		</dict>
+		<key>减肥</key>
+		<dict>
+			<key>减肥塑身</key>
+			<string></string>
+		</dict>
+		<key>颈部护理</key>
+		<dict>
+			<key>夏日美颈</key>
+			<string></string>
+		</dict>
+	</dict>
+</dict>
+</plist>
