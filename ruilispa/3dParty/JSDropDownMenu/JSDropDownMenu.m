@@ -331,48 +331,6 @@
     return self;
 }
 
-//竖屏
-- (void)resetMenuFramePortrait
-{
-    CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    CGPoint origin = _origin;
-    
-    NSLog(@"------   %@",NSStringFromCGSize(screenSize));
-    
-    NSLog(@"------www   %f    hhhh %f",SCREEN_WIDTH,SCREEN_HEIGHT);
-
-    
-    self.frame = CGRectMake(_origin.x, _origin.y, screenSize.width, screenSize.height);
-
-    _leftTableView.frame = CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, 0, 0);
-    _rightTableView.frame = CGRectMake(self.frame.size.width, self.frame.origin.y + self.frame.size.height, 0, 0);
-    _collectionView.frame = CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
-    _backGroundView.frame = CGRectMake(origin.x, origin.y, screenSize.width, screenSize.height);
-    _bottomShadow.frame = CGRectMake(0, self.frame.size.height-0.5, screenSize.width, 0.5);
-    
-}
-
-//横屏
-- (void)resetMenuFrameLandscape
-{
-    CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    CGPoint origin = _origin;
-    
-    NSLog(@"------   %@",NSStringFromCGSize(screenSize));
-    
-    NSLog(@"------www   %f    hhhh %f",SCREEN_WIDTH,SCREEN_HEIGHT);
-    
-    self.frame = CGRectMake(_origin.x, _origin.y, screenSize.width, screenSize.height);
-    
-    _leftTableView.frame = CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, 0, 0);
-    _rightTableView.frame = CGRectMake(self.frame.size.width, self.frame.origin.y + self.frame.size.height, 0, 0);
-    _collectionView.frame = CGRectMake(origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
-    _backGroundView.frame = CGRectMake(origin.x, origin.y, screenSize.width, screenSize.height);
-    _bottomShadow.frame = CGRectMake(0, self.frame.size.height-0.5, screenSize.width, 0.5);
-    
-}
-
-
 #pragma mark - init support
 - (CALayer *)createBgLayerWithColor:(UIColor *)color andPosition:(CGPoint)position {
     CALayer *layer = [CALayer layer];
@@ -658,7 +616,7 @@
             leftTableView.frame = CGRectMake(_origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width*ratio, 0);
             [self.superview addSubview:leftTableView];
             
-            leftTableViewHeight = ([leftTableView numberOfRowsInSection:0] > 5) ? (5 * leftTableView.rowHeight) : ([leftTableView numberOfRowsInSection:0] * leftTableView.rowHeight);
+            leftTableViewHeight = ([leftTableView numberOfRowsInSection:0] > 10) ? (10 * leftTableView.rowHeight) : ([leftTableView numberOfRowsInSection:0] * leftTableView.rowHeight);
 
         }
         
@@ -931,8 +889,7 @@
 
 - (void)confiMenuWithSelectRow:(NSInteger)row leftOrRight:(NSInteger)leftOrRight{
     CATextLayer *title = (CATextLayer *)_titles[_currentSelectedMenudIndex];
-    title.string = [self.dataSource menu:self titleForRowAtIndexPath:[JSIndexPath indexPathWithCol:self.currentSelectedMenudIndex leftOrRight:leftOrRight leftRow:_leftSelectedRow row:row]];
-    
+    title.string = [self.dataSource menu:self titleForColumnAtIndexPath:[JSIndexPath indexPathWithCol:self.currentSelectedMenudIndex leftOrRight:leftOrRight leftRow:_leftSelectedRow row:row]];
     [self animateIdicator:_indicators[_currentSelectedMenudIndex] background:_backGroundView leftTableView:_leftTableView rightTableView:_rightTableView title:_titles[_currentSelectedMenudIndex] forward:NO complecte:^{
         _show = NO;
     }];

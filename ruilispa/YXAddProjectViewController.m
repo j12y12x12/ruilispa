@@ -67,7 +67,7 @@
     };
     
     self.navBarView.rightTapBlock = ^{
-        //对于公众号，好友标记表示是否关注该公众号
+
     };
     
 }

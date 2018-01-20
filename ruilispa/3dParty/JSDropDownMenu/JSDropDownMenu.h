@@ -33,7 +33,13 @@
 @required
 - (NSInteger)menu:(JSDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column leftOrRight:(NSInteger)leftOrRight leftRow:(NSInteger)leftRow;
 - (NSString *)menu:(JSDropDownMenu *)menu titleForRowAtIndexPath:(JSIndexPath *)indexPath;
+
+//初始化调用
 - (NSString *)menu:(JSDropDownMenu *)menu titleForColumn:(NSInteger)column;
+
+//每次都会调
+- (NSString *)menu:(JSDropDownMenu *)menu titleForColumnAtIndexPath:(JSIndexPath *)indexPath;
+
 /**
  * 表视图显示时，左边表显示比例
  */
@@ -85,6 +91,5 @@
 - (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height;
 - (NSString *)titleForRowAtIndexPath:(JSIndexPath *)indexPath;
 
-- (void)resetMenuFramePortrait;
 
 @end
