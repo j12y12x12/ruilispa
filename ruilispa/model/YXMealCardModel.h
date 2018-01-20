@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *mealCardName;
 
-@property (strong, nonatomic) NSArray *includeProject;
+@property (strong, nonatomic) NSString *includeProject;
 
 @property (strong, nonatomic) NSString *imagePath;
 

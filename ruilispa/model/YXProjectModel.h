@@ -26,7 +26,7 @@
 /** 办卡价格 */
 @property (strong, nonatomic) NSString *cardPrice;
 /** 办卡包含次数 */
-@property (strong, nonatomic) NSNumber *count;
+@property (assign, nonatomic) int count;
 
 
 @property (assign, nonatomic) int isTimeCard;
