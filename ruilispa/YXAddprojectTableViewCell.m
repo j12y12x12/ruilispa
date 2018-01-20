@@ -36,6 +36,18 @@
 
 @implementation YXAddprojectTableViewCell
 
+- (UIImageView *)pjtImageView
+{
+    if (!_pjtImageView) {
+        _pjtImageView = [[UIImageView alloc] init];
+        
+        _pjtImageView.image = [UIImage imageNamed:@"defaultImg.jpeg"];
+        [self addSubview:_pjtImageView];
+        
+    }
+    return _pjtImageView;
+}
+
 - (UIImageView *)arrowImgView
 {
     if (!_arrowImgView) {
@@ -54,6 +66,7 @@
         _classLabel = [[UILabel alloc] init];
         _classLabel.font = [UIFont systemFontOfSize:13];
         _classLabel.textColor = [UIColor grayColor];
+        _classLabel.textAlignment = NSTextAlignmentRight;
         [self addSubview:_classLabel];
 
     }
@@ -79,11 +92,30 @@
         _expirDateTextField.font = [UIFont systemFontOfSize:kFont];
         _expirDateTextField.textColor = [UIColor grayColor];
         _expirDateTextField.delegate = self;
+        _expirDateTextField.textAlignment = NSTextAlignmentRight;
+
         [self addSubview:_expirDateTextField];
 
     }
     return _expirDateTextField;
 }
+
+- (UITextField *)howlongTextField
+{
+    if (!_howlongTextField) {
+        
+        _howlongTextField = [[UITextField alloc] init];
+        _howlongTextField.font = [UIFont systemFontOfSize:kFont];
+        _howlongTextField.textColor = [UIColor grayColor];
+        _howlongTextField.delegate = self;
+        _howlongTextField.textAlignment = NSTextAlignmentRight;
+        
+        [self addSubview:_howlongTextField];
+        
+    }
+    return _howlongTextField;
+}
+
 
 - (UITextField *)nameTextField
 {
@@ -93,6 +125,7 @@
         _nameTextField.font = [UIFont systemFontOfSize:kFont];
         _nameTextField.textColor = [UIColor grayColor];
         _nameTextField.delegate = self;
+        _nameTextField.textAlignment = NSTextAlignmentRight;
 
         [self addSubview:_nameTextField];
 
@@ -107,6 +140,7 @@
         _singlePriceTextField.font = [UIFont systemFontOfSize:kFont];
         _singlePriceTextField.textColor = [UIColor grayColor];
         _singlePriceTextField.delegate = self;
+        _singlePriceTextField.textAlignment = NSTextAlignmentRight;
 
         [self addSubview:_singlePriceTextField];
 
@@ -122,6 +156,7 @@
         _cardPriceTextField.font = [UIFont systemFontOfSize:kFont];
         _cardPriceTextField.textColor = [UIColor grayColor];
         _cardPriceTextField.delegate = self;
+        _cardPriceTextField.textAlignment = NSTextAlignmentRight;
 
         [self addSubview:_cardPriceTextField];
 
@@ -136,6 +171,7 @@
         _countTextField.font = [UIFont systemFontOfSize:kFont];
         _countTextField.textColor = [UIColor grayColor];
         _countTextField.delegate = self;
+        _countTextField.textAlignment = NSTextAlignmentRight;
 
         [self addSubview:_countTextField];
 
@@ -150,6 +186,7 @@
         _consumeTextField.font = [UIFont systemFontOfSize:kFont];
         _consumeTextField.textColor = [UIColor grayColor];
         _consumeTextField.delegate = self;
+        _consumeTextField.textAlignment = NSTextAlignmentRight;
 
         [self addSubview:_consumeTextField];
 
@@ -193,6 +230,7 @@
     [super layoutSubviews];
 }
 
+
 - (void)setCellName:(NSString *)cellName
 {
     _cellName = cellName;
@@ -221,7 +259,17 @@
     {
         self.classLabel.hidden = NO;
         self.arrowImgView.hidden = NO;
-        self.classLabel.backgroundColor = [UIColor redColor];
+        
+        if (self.addProVC.projectModel.name.length > 0)
+        {
+            self.classLabel.text = self.addProVC.projectModel.name;
+
+        }
+        else
+        {
+            self.classLabel.text = @"选择类别";
+        }
+        
         
         CGFloat arrowImgViewW = 20;
         CGFloat arrowImgViewH = 20;
@@ -239,8 +287,16 @@
     {
         self.classLabel.hidden = NO;
         self.arrowImgView.hidden = NO;
-        self.classLabel.backgroundColor = [UIColor redColor];
-        
+        if (self.addProVC.projectModel.pjtClass.length > 0)
+        {
+            self.classLabel.text = self.addProVC.projectModel.pjtClass;
+            
+        }
+        else
+        {
+            self.classLabel.text = @"选择系列";
+        }
+
         CGFloat arrowImgViewW = 20;
         CGFloat arrowImgViewH = 20;
         CGFloat arrowImgViewX = SCREEN_WIDTH - arrowImgViewW - 20;
@@ -256,8 +312,9 @@
     else if ([cellName isEqualToString:@"卡类别"])
     {
         UIButton *cardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [cardBtn setTitle:@"" forState:UIControlStateNormal];
+        [cardBtn setTitle:@"次卡" forState:UIControlStateNormal];
         
+        [cardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         cardBtn.frame = CGRectMake(self.cellNameLabel.right + 30, 8, 120, 30);
         
         [self addSubview:cardBtn];
@@ -265,6 +322,7 @@
     else if ([cellName isEqualToString:@"项目名称"])
     {
         self.nameTextField.hidden = NO;
+        self.nameTextField.placeholder = @"输入项目名称";
         CGFloat nameTextFieldX = self.cellNameLabel.right + 50;
         
         self.nameTextField.frame = CGRectMake(nameTextFieldX, 10, SCREEN_WIDTH - nameTextFieldX - 10, 30);
@@ -281,7 +339,8 @@
     else if ([cellName isEqualToString:@"时长"])
     {
         self.howlongTextField.hidden = NO;
-        
+        self.howlongTextField.placeholder = @"输入时长";
+
         CGFloat howlongTextFieldX = self.cellNameLabel.right + 50;
 
         self.howlongTextField.frame = CGRectMake(howlongTextFieldX, 10, SCREEN_WIDTH - howlongTextFieldX - 10, 30);
@@ -289,19 +348,51 @@
     }
     else if ([cellName isEqualToString:@"单次价格"] || [cellName isEqualToString:@"市场价格"])
     {
+        self.singlePriceTextField.hidden = NO;
+
+        self.singlePriceTextField.placeholder = @"输入价格";
         
+        CGFloat howlongTextFieldX = self.cellNameLabel.right + 50;
+        
+        self.singlePriceTextField.frame = CGRectMake(howlongTextFieldX, 10, SCREEN_WIDTH - howlongTextFieldX - 10, 30);
+
+
     }
     else if ([cellName isEqualToString:@"办卡价格"] || [cellName isEqualToString:@"优惠价格"])
     {
+        self.cardPriceTextField.hidden = NO;
+
+        self.cardPriceTextField.placeholder = @"输入价格";
         
+        CGFloat howlongTextFieldX = self.cellNameLabel.right + 50;
+        
+        self.cardPriceTextField.frame = CGRectMake(howlongTextFieldX, 10, SCREEN_WIDTH - howlongTextFieldX - 10, 30);
+
+
     }
     else if ([cellName isEqualToString:@"包含次数"] || [cellName isEqualToString:@"最多包含次数"])
     {
+        self.countTextField.hidden = NO;
+        self.countTextField.placeholder = @"输入次数";
         
+        CGFloat howlongTextFieldX = self.cellNameLabel.right + 50;
+        
+        self.countTextField.frame = CGRectMake(howlongTextFieldX, 10, SCREEN_WIDTH - howlongTextFieldX - 10, 30);
+
+
     }
     else if ([cellName isEqualToString:@"功能介绍"])
     {
+        self.introduceTextView.hidden = NO;
+        self.introduceTextView.frame = CGRectMake(10, self.cellNameLabel.bottom + 10, SCREEN_WIDTH - 20, 150);
+        self.introduceTextView.layer.backgroundColor = [[UIColor clearColor] CGColor];
+        self.introduceTextView.layer.borderColor = [[UIColor grayColor]CGColor];
+        self.introduceTextView.layer.borderWidth = 1.0;
+        self.introduceTextView.layer.cornerRadius = 5.0;
+
+        self.introduceTextView.layer.masksToBounds = YES;
         
+
     }
     else if ([cellName isEqualToString:@"有效期"])
     {

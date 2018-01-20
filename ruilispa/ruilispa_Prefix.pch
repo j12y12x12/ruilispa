@@ -36,6 +36,12 @@
 
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
+//主体绿色
+#define kThemeColor HEX_COLOR_ALPHA(0x0bbe06, 1)
+
+#define kThemeColorDisabled HEX_COLOR_ALPHA(0x0bbe06, 0.5)
+
+#define TABLEVIEW_COLOR [UIColor colorWithRed: 0xF0/255.0 green:0xF0/255.0 blue:0xF0/255.0 alpha:1]
 
 
 #import "UIView+UIViewExt.h"

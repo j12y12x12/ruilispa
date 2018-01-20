@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol YXSelectProjectViewControllerDelegate  <NSObject>
+
+- (void)hasSelectProject:(NSString *)project;
+
+@end
+
+
 @interface YXSelectProjectViewController : UIViewController
+
+@property (strong, nonatomic) NSString *oldProject;
+
+@property (nonatomic, weak) id<YXSelectProjectViewControllerDelegate> delegate;
 
 @end
