@@ -10,16 +10,19 @@
 
 @interface YXProjectModel : NSObject
 
+/** 项目名称 */
+@property (strong, nonatomic) NSString *projectName;
+
 /** 总类别 */
-@property (strong, nonatomic) NSString *pjtClass;
+@property (strong, nonatomic) NSString *projectClass;
 /** 系列 */
-@property (strong, nonatomic) NSString *SubClass;
+@property (strong, nonatomic) NSString *subClass;
 /** 卡类别，包含次卡和时效卡 */
 @property (strong, nonatomic) NSString *cardClass;
 
 
 //次卡
-@property (strong, nonatomic) NSString *singleCard;
+@property (assign, nonatomic) int isSingleCard;
 /** 单次价格 */
 @property (strong, nonatomic) NSString *singlePrice;
 /** 办卡价格 */
@@ -28,33 +31,27 @@
 @property (strong, nonatomic) NSNumber *count;
 
 
-/** 时效卡 */
-@property (strong, nonatomic) NSString *timeCard;
+@property (assign, nonatomic) int isTimeCard;
+@property (assign, nonatomic) int isMoutheCard;
+@property (assign, nonatomic) int isQuarterCard;
+@property (assign, nonatomic) int isHalfYearCard;
+@property (assign, nonatomic) int isYearCard;
 
-@property (strong, nonatomic) NSString *moutheCard;
-
-@property (strong, nonatomic) NSString *quarterCard;
-
-@property (strong, nonatomic) NSString *halfYearCard;
-
-@property (strong, nonatomic) NSString *yearCard;
 
 /** 有效期，单位：月 */
-@property (strong, nonatomic) NSNumber *expirCount;
+@property (assign, nonatomic) int expirCount;
 
 @property (strong, nonatomic) NSString *marketPrice;
 
 @property (strong, nonatomic) NSString *vipPrice;
 
-@property (strong, nonatomic) NSNumber *maxIncludeCount;
+@property (assign, nonatomic) int maxIncludeCount;
 //单次耗卡金额，时效卡有
 @property (strong, nonatomic) NSString *singleConsumePrice;
 
 
-/** 项目名称 */
-@property (strong, nonatomic) NSString *name;
 /** 图片 */
-@property (strong, nonatomic) NSString *image;
+@property (strong, nonatomic) NSString *imagePath;
 /** 时长 */
 @property (strong, nonatomic) NSString *howlong;
 

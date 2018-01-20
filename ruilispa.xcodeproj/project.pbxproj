@@ -37,6 +37,9 @@
 		91E18FE72013278D00706125 /* YXSelectProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FE62013278D00706125 /* YXSelectProjectTableViewCell.m */; };
 		91E18FEA2013280E00706125 /* cellSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91E18FE82013280E00706125 /* cellSelected@2x.png */; };
 		91E18FEB2013280E00706125 /* cellSelected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91E18FE92013280E00706125 /* cellSelected@3x.png */; };
+		91E18FEE2013424100706125 /* YXProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FED2013424100706125 /* YXProductModel.m */; };
+		91E18FF12013442F00706125 /* YXMealCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FF02013442F00706125 /* YXMealCardModel.m */; };
+		91E18FF4201344D900706125 /* YXChargeCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FF3201344D900706125 /* YXChargeCardModel.m */; };
 		91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD26D200CD02100CD3E1E /* AppDelegate.m */; };
 		91FAD271200CD02100CD3E1E /* YXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD270200CD02100CD3E1E /* YXViewController.m */; };
 		91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD275200CD02100CD3E1E /* Assets.xcassets */; };
@@ -113,6 +116,12 @@
 		91E18FE62013278D00706125 /* YXSelectProjectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXSelectProjectTableViewCell.m; sourceTree = "<group>"; };
 		91E18FE82013280E00706125 /* cellSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellSelected@2x.png"; sourceTree = "<group>"; };
 		91E18FE92013280E00706125 /* cellSelected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellSelected@3x.png"; sourceTree = "<group>"; };
+		91E18FEC2013424100706125 /* YXProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXProductModel.h; sourceTree = "<group>"; };
+		91E18FED2013424100706125 /* YXProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXProductModel.m; sourceTree = "<group>"; };
+		91E18FEF2013442F00706125 /* YXMealCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXMealCardModel.h; sourceTree = "<group>"; };
+		91E18FF02013442F00706125 /* YXMealCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXMealCardModel.m; sourceTree = "<group>"; };
+		91E18FF2201344D900706125 /* YXChargeCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXChargeCardModel.h; sourceTree = "<group>"; };
+		91E18FF3201344D900706125 /* YXChargeCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXChargeCardModel.m; sourceTree = "<group>"; };
 		91FAD269200CD02100CD3E1E /* ruilispa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruilispa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FAD26C200CD02100CD3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91FAD26D200CD02100CD3E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -235,6 +244,12 @@
 			children = (
 				91E18FD12012E5D700706125 /* YXProjectModel.h */,
 				91E18FD22012E5D700706125 /* YXProjectModel.m */,
+				91E18FEC2013424100706125 /* YXProductModel.h */,
+				91E18FED2013424100706125 /* YXProductModel.m */,
+				91E18FEF2013442F00706125 /* YXMealCardModel.h */,
+				91E18FF02013442F00706125 /* YXMealCardModel.m */,
+				91E18FF2201344D900706125 /* YXChargeCardModel.h */,
+				91E18FF3201344D900706125 /* YXChargeCardModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -459,10 +474,13 @@
 				914EB85D200D986B007E6EE4 /* CustomMenuTableViewCell.m in Sources */,
 				91E18FE02013013300706125 /* YXAddprojectTableViewCell.m in Sources */,
 				91E18FC62012DD4E00706125 /* YXSQLManager.m in Sources */,
+				91E18FF4201344D900706125 /* YXChargeCardModel.m in Sources */,
 				91E18FD92012FB7A00706125 /* YXSelectProjectClassViewController.m in Sources */,
 				91FAD271200CD02100CD3E1E /* YXViewController.m in Sources */,
+				91E18FF12013442F00706125 /* YXMealCardModel.m in Sources */,
 				914EB856200D986B007E6EE4 /* FMDatabaseQueue.m in Sources */,
 				91FAD27C200CD02100CD3E1E /* main.m in Sources */,
+				91E18FEE2013424100706125 /* YXProductModel.m in Sources */,
 				914EB858200D986B007E6EE4 /* FMDatabase.m in Sources */,
 				914EB859200D986B007E6EE4 /* FMDatabasePool.m in Sources */,
 				91E18FC32012DD2D00706125 /* YXAddProjectViewController.m in Sources */,
