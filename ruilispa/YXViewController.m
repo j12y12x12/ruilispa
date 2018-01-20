@@ -77,6 +77,10 @@
     addPjtBtn.backgroundColor = [UIColor yellowColor];
 
     [self.view addSubview:addPjtBtn];
+    
+    [[YXSQLManager shareManager] searchAllChargeCardInfoWithBlock:^(NSArray *cardModelArray) {
+        
+    }];
 
 }
 

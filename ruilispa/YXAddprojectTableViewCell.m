@@ -260,9 +260,9 @@
         self.classLabel.hidden = NO;
         self.arrowImgView.hidden = NO;
         
-        if (self.addProVC.projectModel.name.length > 0)
+        if (self.addProVC.projectModel.projectName.length > 0)
         {
-            self.classLabel.text = self.addProVC.projectModel.name;
+            self.classLabel.text = self.addProVC.projectModel.projectName;
 
         }
         else
@@ -287,9 +287,9 @@
     {
         self.classLabel.hidden = NO;
         self.arrowImgView.hidden = NO;
-        if (self.addProVC.projectModel.pjtClass.length > 0)
+        if (self.addProVC.projectModel.projectClass.length > 0)
         {
-            self.classLabel.text = self.addProVC.projectModel.pjtClass;
+            self.classLabel.text = self.addProVC.projectModel.projectClass;
             
         }
         else
@@ -408,7 +408,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    self.addProVC.projectModel.name = self.nameTextField.text;
+    self.addProVC.projectModel.projectName = self.nameTextField.text;
     self.addProVC.projectModel.howlong = self.howlongTextField.text;
     self.addProVC.projectModel.singlePrice = self.singlePriceTextField.text;
     self.addProVC.projectModel.cardPrice = self.cardPriceTextField.text;

@@ -40,6 +40,7 @@
 		91E18FEE2013424100706125 /* YXProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FED2013424100706125 /* YXProductModel.m */; };
 		91E18FF12013442F00706125 /* YXMealCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FF02013442F00706125 /* YXMealCardModel.m */; };
 		91E18FF4201344D900706125 /* YXChargeCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FF3201344D900706125 /* YXChargeCardModel.m */; };
+		91E18FF720134C4B00706125 /* ruili.db in Resources */ = {isa = PBXBuildFile; fileRef = 91E18FF620134C4B00706125 /* ruili.db */; };
 		91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD26D200CD02100CD3E1E /* AppDelegate.m */; };
 		91FAD271200CD02100CD3E1E /* YXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FAD270200CD02100CD3E1E /* YXViewController.m */; };
 		91FAD276200CD02100CD3E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91FAD275200CD02100CD3E1E /* Assets.xcassets */; };
@@ -122,6 +123,7 @@
 		91E18FF02013442F00706125 /* YXMealCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXMealCardModel.m; sourceTree = "<group>"; };
 		91E18FF2201344D900706125 /* YXChargeCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXChargeCardModel.h; sourceTree = "<group>"; };
 		91E18FF3201344D900706125 /* YXChargeCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXChargeCardModel.m; sourceTree = "<group>"; };
+		91E18FF620134C4B00706125 /* ruili.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ruili.db; sourceTree = "<group>"; };
 		91FAD269200CD02100CD3E1E /* ruilispa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruilispa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FAD26C200CD02100CD3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91FAD26D200CD02100CD3E1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -254,6 +256,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		91E18FF520134C3C00706125 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				91E18FF620134C4B00706125 /* ruili.db */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
 		91FAD260200CD02100CD3E1E = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +287,7 @@
 		91FAD26B200CD02100CD3E1E /* ruilispa */ = {
 			isa = PBXGroup;
 			children = (
+				91E18FF520134C3C00706125 /* db */,
 				91E18FCB2012E31600706125 /* imageSource */,
 				916EF46F200F8644001CBB6D /* tools */,
 				914EB843200D9851007E6EE4 /* 3dParty */,
@@ -446,6 +457,7 @@
 				91E18FEB2013280E00706125 /* cellSelected@3x.png in Resources */,
 				91E18FC02012D63A00706125 /* project.plist in Resources */,
 				916EF478200F89A5001CBB6D /* ico_make.png in Resources */,
+				91E18FF720134C4B00706125 /* ruili.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

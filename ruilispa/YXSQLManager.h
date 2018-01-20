@@ -10,4 +10,8 @@
 
 @interface YXSQLManager : NSObject
 
++ (YXSQLManager *)shareManager;
+
+- (void)searchAllChargeCardInfoWithBlock:(void(^)(NSArray *cardModelArray))callBackBlock;
+
 @end

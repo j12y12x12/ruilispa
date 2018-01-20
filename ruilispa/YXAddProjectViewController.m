@@ -135,14 +135,14 @@
     {
         YXSelectProjectViewController *selectProVC = [[YXSelectProjectViewController alloc] init];
         
-        selectProVC.oldProject = self.projectModel.name;
+        selectProVC.oldProject = self.projectModel.projectName;
         selectProVC.delegate = self;
         [self.navigationController pushViewController:selectProVC animated:YES];
         
     }
     if ([name isEqualToString:@"选择系列"])
     {
-        if (self.projectModel.name.length == 0)
+        if (self.projectModel.projectName.length == 0)
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"请先选择类别" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
             
@@ -153,8 +153,8 @@
         
         YXSelectProjectClassViewController *selectProClassVC = [[YXSelectProjectClassViewController alloc] init];
         
-        selectProClassVC.selectProject = self.projectModel.name;
-        selectProClassVC.oldProjectClass = self.projectModel.pjtClass;
+        selectProClassVC.selectProject = self.projectModel.projectName;
+        selectProClassVC.oldProjectClass = self.projectModel.projectClass;
         selectProClassVC.delegate = self;
 
         [self.navigationController pushViewController:selectProClassVC animated:YES];
@@ -237,15 +237,15 @@
 #pragma mark - YXSelectProjectViewControllerDelegate
 - (void)hasSelectProject:(NSString *)project
 {
-    self.projectModel.name = project;
-    self.projectModel.pjtClass = nil;
+    self.projectModel.projectName = project;
+    self.projectModel.projectClass = nil;
     [self.tableView reloadData];
 }
 
 #pragma mark - YXSelectProjectClassViewControllerDelegate
 - (void)hasSelectProjectClass:(NSString *)projectClass
 {
-    self.projectModel.pjtClass = projectClass;
+    self.projectModel.projectClass = projectClass;
     [self.tableView reloadData];
 
 }
