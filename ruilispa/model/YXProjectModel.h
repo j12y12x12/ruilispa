@@ -17,8 +17,6 @@
 @property (strong, nonatomic) NSString *projectClass;
 /** 系列 */
 @property (strong, nonatomic) NSString *subClass;
-/** 卡类别，包含次卡和时效卡 */
-@property (strong, nonatomic) NSString *cardClass;
 
 
 //次卡
