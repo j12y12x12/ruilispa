@@ -57,36 +57,28 @@
 +(void)createTable:(FMDatabaseQueue *)queue
 {
     return;
-    [queue inDatabase:^(FMDatabase *db) {
-        
-        if (![db tableExists:@"FileInfo"]) {
-            BOOL isSuccess = [db executeUpdate:@"CREATE TABLE FileInfo (db_id integer primary key,size text,itype text,time text,url text,roomJIDStr text,filename text,fromJIDStr text,messageID text,type text,isdelete integer,uuid text,filetype text,fromme integer)"];
-            
-            if (isSuccess) {
-                NSLog(@"创建FileInfo成功");
-            }
-            
-        }
-        
-        if (![db columnExists:@"uuid" inTableWithName:@"FileInfo"]) {
-            NSString *sql = [NSString stringWithFormat:@"alter table FileInfo add uuid text"];
-            [db executeUpdate:sql];
-        }
-        if (![db columnExists:@"filetype" inTableWithName:@"FileInfo"]) {
-            NSString *sql = [NSString stringWithFormat:@"alter table FileInfo add filetype text"];
-            [db executeUpdate:sql];
-        }
-        if (![db columnExists:@"fromme" inTableWithName:@"FileInfo"]) {
-            NSString *sql = [NSString stringWithFormat:@"alter table FileInfo add fromme integer"];
-            [db executeUpdate:sql];
-        }
-        if (![db columnExists:@"md5" inTableWithName:@"FileInfo"]) {
-            NSString *sql = [NSString stringWithFormat:@"alter table FileInfo add md5 text"];
-            [db executeUpdate:sql];
-        }
-        
-        
-    }];
+//    [queue inDatabase:^(FMDatabase *db) {
+//
+//        if (![db tableExists:@"FileInfo"]) {
+//            BOOL isSuccess = [db executeUpdate:@"CREATE TABLE tableName (db_id integer primary key,size text,isdelete integer,fromme integer)"];
+//
+//            if (isSuccess) {
+//                NSLog(@"创建tableName成功");
+//            }
+//
+//        }
+//
+//        if (![db columnExists:@"uusss" inTableWithName:@"tableName"]) {
+//            NSString *sql = [NSString stringWithFormat:@"alter table tableName add uusss text"];
+//            [db executeUpdate:sql];
+//        }
+//        if (![db columnExists:@"ggggg" inTableWithName:@"FileInfo"]) {
+//            NSString *sql = [NSString stringWithFormat:@"alter table FileInfo add ggggg integer"];
+//            [db executeUpdate:sql];
+//        }
+//
+//
+//    }];
 }
 
 

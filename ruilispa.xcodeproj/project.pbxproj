@@ -20,6 +20,7 @@
 		916EF477200F89A5001CBB6D /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF474200F89A5001CBB6D /* JSDropDownMenu.m */; };
 		916EF478200F89A5001CBB6D /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 916EF475200F89A5001CBB6D /* ico_make.png */; };
 		916EF47F200F9235001CBB6D /* YXDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF47E200F9235001CBB6D /* YXDeviceTools.m */; };
+		918CB4542013968900605722 /* ruili.db in Resources */ = {isa = PBXBuildFile; fileRef = 918CB4532013968900605722 /* ruili.db */; };
 		91E18FC02012D63A00706125 /* project.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E18FBF2012D63A00706125 /* project.plist */; };
 		91E18FC32012DD2D00706125 /* YXAddProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FC22012DD2D00706125 /* YXAddProjectViewController.m */; };
 		91E18FC62012DD4E00706125 /* YXSQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FC52012DD4E00706125 /* YXSQLManager.m */; };
@@ -92,6 +93,7 @@
 		916EF476200F89A5001CBB6D /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
 		916EF47D200F9235001CBB6D /* YXDeviceTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDeviceTools.h; sourceTree = "<group>"; };
 		916EF47E200F9235001CBB6D /* YXDeviceTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDeviceTools.m; sourceTree = "<group>"; };
+		918CB4532013968900605722 /* ruili.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ruili.db; sourceTree = "<group>"; };
 		91E18FBF2012D63A00706125 /* project.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = project.plist; sourceTree = "<group>"; };
 		91E18FC12012DD2D00706125 /* YXAddProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXAddProjectViewController.h; sourceTree = "<group>"; };
 		91E18FC22012DD2D00706125 /* YXAddProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXAddProjectViewController.m; sourceTree = "<group>"; };
@@ -123,7 +125,6 @@
 		91E18FF02013442F00706125 /* YXMealCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXMealCardModel.m; sourceTree = "<group>"; };
 		91E18FF2201344D900706125 /* YXChargeCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXChargeCardModel.h; sourceTree = "<group>"; };
 		91E18FF3201344D900706125 /* YXChargeCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXChargeCardModel.m; sourceTree = "<group>"; };
-		91E18FF920136AB000706125 /* ruili.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ruili.db; sourceTree = "<group>"; };
 		91E18FFA20137AE700706125 /* product.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = product.plist; sourceTree = "<group>"; };
 		91FAD269200CD02100CD3E1E /* ruilispa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ruilispa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91FAD26C200CD02100CD3E1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -220,9 +221,9 @@
 		916EF473200F89A5001CBB6D /* JSDropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
+				916EF476200F89A5001CBB6D /* JSDropDownMenu.h */,
 				916EF474200F89A5001CBB6D /* JSDropDownMenu.m */,
 				916EF475200F89A5001CBB6D /* ico_make.png */,
-				916EF476200F89A5001CBB6D /* JSDropDownMenu.h */,
 			);
 			path = JSDropDownMenu;
 			sourceTree = "<group>";
@@ -260,7 +261,7 @@
 		91E18FF520134C3C00706125 /* db */ = {
 			isa = PBXGroup;
 			children = (
-				91E18FF920136AB000706125 /* ruili.db */,
+				918CB4532013968900605722 /* ruili.db */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -448,6 +449,7 @@
 			files = (
 				916EF46C200E3D7D001CBB6D /* LaunchScreen.storyboard in Resources */,
 				91E18FCE2012E34600706125 /* ImageShow_Back.png in Resources */,
+				918CB4542013968900605722 /* ruili.db in Resources */,
 				91E18FDD2012FDE700706125 /* defaultImg.jpeg in Resources */,
 				91E18FDC2012FDE700706125 /* defaultImg@2x.jpeg in Resources */,
 				914EB85B200D986B007E6EE4 /* Info.plist in Resources */,
