@@ -69,6 +69,8 @@
 @protocol JSDropDownMenuDelegate <NSObject>
 @optional
 - (void)menu:(JSDropDownMenu *)menu didSelectRowAtIndexPath:(JSIndexPath *)indexPath;
+- (void)menu:(JSDropDownMenu *)menu didSelectMenuAtColumn:(NSInteger )index;
+
 @end
 
 #pragma mark - interface

@@ -10,21 +10,29 @@
 #import "JSDropDownMenu.h"
 #import "YXAddProjectViewController.h"
 
-@interface YXViewController ()<JSDropDownMenuDataSource,JSDropDownMenuDelegate>
+@interface YXViewController ()<JSDropDownMenuDataSource,JSDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) YXNavBarView *navBarView;
 
 @property (strong, nonatomic) NSMutableArray *data1;
 @property (strong, nonatomic) NSMutableArray *data2;
 @property (strong, nonatomic) NSMutableArray *data3;
+@property (strong, nonatomic) NSMutableArray *data4;
 
 @property (assign, nonatomic) NSInteger currentData1Index;
 @property (assign, nonatomic) NSInteger currentData2Index;
 @property (assign, nonatomic) NSInteger currentData3Index;
+@property (assign, nonatomic) NSInteger currentData4Index;
 
 @property (assign, nonatomic) NSInteger currentData1SelectedIndex;
 
 @property (strong, nonatomic) JSDropDownMenu *menu;
+
+@property (strong, nonatomic) UITableView *tableView;
+
+@property (strong, nonatomic) UIView *myHeaderView;
+
+@property (strong, nonatomic) UILabel *myHeaderLabel;
 
 
 @end
@@ -38,15 +46,16 @@
     
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
     
-    UIButton *addPjtBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    addPjtBtn.frame = CGRectMake(200, 200, 200, 200);
-    
-    [addPjtBtn addTarget:self action:@selector(addProject) forControlEvents:UIControlEventTouchUpInside];
-    
-    addPjtBtn.backgroundColor = [UIColor yellowColor];
-
-    [self.view addSubview:addPjtBtn];
+    //添加项目屏蔽
+//    UIButton *addPjtBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//
+//    addPjtBtn.frame = CGRectMake(200, 200, 200, 200);
+//
+//    [addPjtBtn addTarget:self action:@selector(addProject) forControlEvents:UIControlEventTouchUpInside];
+//
+//    addPjtBtn.backgroundColor = [UIColor yellowColor];
+//
+//    [self.view addSubview:addPjtBtn];
     
     [[YXSQLManager shareManager] searchAllChargeCardInfoWithBlock:^(NSArray *cardModelArray) {
         
@@ -56,9 +65,46 @@
     
     [self getDropMenuData];
     
-    
+    [self initTableView];
 
 }
+
+- (void)initTableView
+{
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,self.menu.bottom, SCREEN_WIDTH, SCREEN_HEIGHT-self.menu.bottom) style:UITableViewStyleGrouped];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.view addSubview:self.tableView];
+    self.tableView.backgroundColor = [UIColor yellowColor];
+    
+    UIView *myHearderView = [[UIView alloc] init];
+    
+    myHearderView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 35);
+    
+    myHearderView.backgroundColor = [UIColor cyanColor];
+    
+    self.myHeaderView = myHearderView;
+    
+    UILabel *hearderLabel = [[UILabel alloc] init];
+    
+    hearderLabel.frame = CGRectMake(10, 9, SCREEN_WIDTH - 20, 20);
+    
+    hearderLabel.font = [UIFont systemFontOfSize:13];
+    
+    hearderLabel.textColor = [UIColor grayColor];
+    
+    self.myHeaderLabel = hearderLabel;
+    
+    [self.myHeaderView addSubview:hearderLabel];
+    
+    self.tableView.tableHeaderView = self.myHeaderView;
+    
+    hearderLabel.text = @"面部''";
+    
+}
+
+
+
 
 
 - (void)iniNavbarView
@@ -122,6 +168,7 @@
     
     NSMutableArray *productArr = [self getProjectOrProductDataWithPlist:@"product.plist"];
 
+    
     // 指定默认选中
     _currentData1Index = 0;
     _currentData1SelectedIndex = 0;
@@ -137,8 +184,9 @@
 //    _data1 = [NSMutableArray arrayWithObjects:@{@"title":@"美食", @"data":food}, @{@"title":@"旅游", @"data":travel}, nil];
 //    _data2 = [NSMutableArray arrayWithObjects:@"智能排序", @"离我最近", @"评价最高", @"最新发布", @"人气最高", @"价格最低", @"价格最高", nil];
     
-    _data3 = [NSMutableArray arrayWithObjects:@"不限人数", @"单人餐", @"双人餐", @"3~4人餐", nil];
-    
+    _data3 = [NSMutableArray arrayWithObjects:@"套卡",nil];
+    _data4 = [NSMutableArray arrayWithObjects:@"充值卡",nil];
+
     _menu = [[JSDropDownMenu alloc] initWithOrigin:CGPointMake(0, 64) andHeight:45];
     _menu.indicatorColor = [UIColor colorWithRed:175.0f/255.0f green:175.0f/255.0f blue:175.0f/255.0f alpha:1.0];
     _menu.separatorColor = [UIColor colorWithRed:210.0f/255.0f green:210.0f/255.0f blue:210.0f/255.0f alpha:1.0];
@@ -193,15 +241,15 @@
 
 - (NSInteger)numberOfColumnsInMenu:(JSDropDownMenu *)menu {
     
-    return 3;
+    return 4;
 }
 
 -(BOOL)displayByCollectionViewInColumn:(NSInteger)column{
     
-    if (column==3) {
-        
-        return YES;
-    }
+//    if (column==3) {
+//
+//        return YES;
+//    }
     
     return NO;
 }
@@ -222,7 +270,7 @@
         return 0.3;
     }
     
-    return 1;
+    return 0;
 }
 
 -(NSInteger)currentLeftSelectedRow:(NSInteger)column{
@@ -273,6 +321,11 @@
         
         return _data3.count;
     }
+    else if (column==3){
+        
+        return _data4.count;
+    }
+    
     
     return 0;
 }
@@ -296,6 +349,9 @@
             break;
         case 2: return _data3[_currentData3Index];
             break;
+        case 3: return _data4[_currentData4Index];
+            break;
+
         default:
             return nil;
             break;
@@ -312,10 +368,15 @@
     {
         return @"产品";
     }
-    if (indexPath.column == 3)
+    if (indexPath.column == 2)
     {
         
         return _data3[indexPath.row];
+    }
+    if (indexPath.column == 3)
+    {
+        
+        return _data4[indexPath.row];
     }
     
     return @"";
@@ -346,9 +407,29 @@
 
 //        return _data2[indexPath.row];
         
-    } else {
+    }
+    else if (indexPath.column==2)
+    {
         
         return _data3[indexPath.row];
+    }
+    else
+    {
+        
+        return _data4[indexPath.row];
+    }
+
+}
+
+- (void)menu:(JSDropDownMenu *)menu didSelectMenuAtColumn:(NSInteger)index
+{
+    if (index == 2)
+    {
+        //套卡
+    }
+    if (index == 3)
+    {
+        //充值卡
     }
 }
 
@@ -374,10 +455,73 @@
 
 //        _currentData2Index = indexPath.row;
         
-    } else{
+    } else if(indexPath.column == 2)
+    {
         
         _currentData3Index = indexPath.row;
     }
+    else
+    {
+        _currentData4Index = indexPath.row;
+    }
+}
+
+
+
+
+#pragma mark - UITableViewDelegate -
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 15;
+}
+
+#pragma mark - UITableViewDataSource -
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+//    NSDictionary *dataDict = [self.dataArray objectAtIndex:indexPath.row];
+    
+//    NSString *name = dataDict[@"name"];
+    
+    static NSString *CellIdentifier = @"addProjectTableCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.textLabel.font = [UIFont systemFontOfSize:17];
+        cell.textLabel.textAlignment = NSTextAlignmentRight;
+        cell.textLabel.backgroundColor = [UIColor clearColor];
+    }
+    cell.textLabel.text = @"test";
+    
+    return cell;
 }
 
 

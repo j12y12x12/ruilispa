@@ -253,10 +253,14 @@
         CATextLayer *title = [self createTextLayerWithNSString:titleString withColor:self.textColor andPosition:titlePosition];
         [self.layer addSublayer:title];
         [tempTitles addObject:title];
-        //indicator
-        CAShapeLayer *indicator = [self createIndicatorWithColor:self.indicatorColor andPosition:CGPointMake(titlePosition.x + title.bounds.size.width / 2 + 8, self.frame.size.height / 2)];
-        [self.layer addSublayer:indicator];
-        [tempIndicators addObject:indicator];
+        
+        if (i == 0 || i == 1)
+        {
+            //indicator
+            CAShapeLayer *indicator = [self createIndicatorWithColor:self.indicatorColor andPosition:CGPointMake(titlePosition.x + title.bounds.size.width / 2 + 8, self.frame.size.height / 2)];
+            [self.layer addSublayer:indicator];
+            [tempIndicators addObject:indicator];
+        }
         
         //separator
          if (i != _numOfMenu - 1) {
@@ -419,14 +423,27 @@
     //calculate index
     NSInteger tapIndex = touchPoint.x / (self.frame.size.width / _numOfMenu);
     
+    if (tapIndex == 2 || tapIndex == 3)
+    {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(menu:didSelectMenuAtColumn:)])
+        {
+            [self.delegate menu:self didSelectMenuAtColumn:tapIndex];
+        }
+        return;
+    }
+    
     for (int i = 0; i < _numOfMenu; i++) {
-        if (i != tapIndex) {
-            [self animateIndicator:_indicators[i] Forward:NO complete:^{
-                [self animateTitle:_titles[i] show:NO complete:^{
-                    
+        if (i == 0 || i == 1)
+        {
+            if (i != tapIndex) {
+                [self animateIndicator:_indicators[i] Forward:NO complete:^{
+                    [self animateTitle:_titles[i] show:NO complete:^{
+                        
+                    }];
                 }];
-            }];
-            [(CALayer *)self.bgLayers[i] setBackgroundColor:BackColor.CGColor];
+                [(CALayer *)self.bgLayers[i] setBackgroundColor:BackColor.CGColor];
+            }
+
         }
     }
     
@@ -518,13 +535,17 @@
             }
             
             if (_currentSelectedMenudIndex!=-1) {
-                // 需要隐藏collectionview
-                [self animateCollectionView:_collectionView show:NO complete:^{
-                    
-                    [self animateIdicator:_indicators[tapIndex] background:_backGroundView leftTableView:_leftTableView rightTableView:_rightTableView title:_titles[tapIndex] forward:YES complecte:^{
-                        _show = YES;
+                
+                if (_currentSelectedMenudIndex == 0 || _currentSelectedMenudIndex == 1) {
+                    // 需要隐藏collectionview
+                    [self animateCollectionView:_collectionView show:NO complete:^{
+                        
+                        [self animateIdicator:_indicators[tapIndex] background:_backGroundView leftTableView:_leftTableView rightTableView:_rightTableView title:_titles[tapIndex] forward:YES complecte:^{
+                            _show = YES;
+                        }];
                     }];
-                }];
+
+                }
                 
             } else{
                 [self animateIdicator:_indicators[tapIndex] background:_backGroundView leftTableView:_leftTableView rightTableView:_rightTableView title:_titles[tapIndex] forward:YES complecte:^{
@@ -544,6 +565,11 @@
         
         displayByCollectionView = [_dataSource displayByCollectionViewInColumn:_currentSelectedMenudIndex];
     }
+    if (_currentSelectedMenudIndex == 2 || _currentSelectedMenudIndex == 3)
+    {
+        return;
+    }
+
     if (displayByCollectionView) {
         
         [self animateIdicator:_indicators[_currentSelectedMenudIndex] background:_backGroundView collectionView:_collectionView title:_titles[_currentSelectedMenudIndex] forward:NO complecte:^{
