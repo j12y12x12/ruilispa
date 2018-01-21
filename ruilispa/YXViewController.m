@@ -426,16 +426,27 @@
     if (index == 2)
     {
         //套卡
+        self.myHeaderLabel.text = @"套卡";
     }
     if (index == 3)
     {
         //充值卡
+        self.myHeaderLabel.text = @"充值卡";
+
     }
 }
 
 - (void)menu:(JSDropDownMenu *)menu didSelectRowAtIndexPath:(JSIndexPath *)indexPath {
     
+    
     if (indexPath.column == 0) {
+        
+        NSDictionary *menuDic = [_data1 objectAtIndex:indexPath.leftRow];
+        NSString *title = [menuDic objectForKey:@"title"];
+        NSString *data = [[menuDic objectForKey:@"data"] objectAtIndex:indexPath.row];
+
+        NSString *titleStr = [NSString stringWithFormat:@"项目•%@•%@",title,data];
+        self.myHeaderLabel.text = titleStr;
         
         if(indexPath.leftOrRight==0){
             
@@ -446,6 +457,14 @@
         
     } else if(indexPath.column == 1){
         
+        NSDictionary *menuDic = [_data1 objectAtIndex:indexPath.leftRow];
+        NSString *title = [menuDic objectForKey:@"title"];
+        NSString *data = [[menuDic objectForKey:@"data"] objectAtIndex:indexPath.row];
+        
+        NSString *titleStr = [NSString stringWithFormat:@"产品•%@•%@",title,data];
+        self.myHeaderLabel.text = titleStr;
+
+
         if(indexPath.leftOrRight==0){
             
             _currentData2Index = indexPath.row;

@@ -82,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-            timestampString = "538202975.0037611"
+            timestampString = "538204921.740369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "963"
-            endingLineNumber = "963"
+            startingLineNumber = "966"
+            endingLineNumber = "966"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -97,76 +97,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ruilispa/YXViewController.m"
-            timestampString = "538202975.00411"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
-            landmarkName = "-menu:didSelectRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-            timestampString = "538202975.004156"
+            timestampString = "538204921.740437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "921"
-            endingLineNumber = "921"
-            landmarkName = "-confiMenuWithSelectRow:leftOrRight:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[JSDropDownMenu confiMenuWithSelectRow:leftOrRight:]"
-                  moduleName = "ruilispa"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jinyixian/Desktop/cccc/ruilispa/ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-                  timestampString = "538202975.079465"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "921"
-                  endingLineNumber = "921"
-                  offsetFromSymbolStart = "340">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__53-[JSDropDownMenu confiMenuWithSelectRow:leftOrRight:]_block_invoke"
-                  moduleName = "ruilispa"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jinyixian/Desktop/cccc/ruilispa/ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-                  timestampString = "538202975.081243"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "921"
-                  endingLineNumber = "921"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-            timestampString = "538202975.004379"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1001"
-            endingLineNumber = "1001"
+            startingLineNumber = "1004"
+            endingLineNumber = "1004"
             landmarkName = "-confiMenuWithSelectRow:"
             landmarkType = "7">
             <Locations>
@@ -178,11 +114,11 @@
                   moduleName = "ruilispa"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jinyixian/Desktop/cccc/ruilispa/ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-                  timestampString = "538202975.085204"
+                  timestampString = "538204921.801512"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1001"
-                  endingLineNumber = "1001"
+                  startingLineNumber = "1004"
+                  endingLineNumber = "1004"
                   offsetFromSymbolStart = "328">
                </Location>
                <Location
@@ -193,11 +129,11 @@
                   moduleName = "ruilispa"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jinyixian/Desktop/cccc/ruilispa/ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-                  timestampString = "538202975.086832"
+                  timestampString = "538204921.8031811"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1001"
-                  endingLineNumber = "1001"
+                  startingLineNumber = "1004"
+                  endingLineNumber = "1004"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -209,13 +145,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ruilispa/3dParty/JSDropDownMenu/JSDropDownMenu.m"
-            timestampString = "538202975.0045969"
+            filePath = "ruilispa/YXViewController.m"
+            timestampString = "538204921.74049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
-            landmarkName = "-menuTapped:"
+            startingLineNumber = "426"
+            endingLineNumber = "426"
+            landmarkName = "-menu:didSelectMenuAtColumn:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -226,12 +162,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ruilispa/YXViewController.m"
-            timestampString = "538202975.004811"
+            timestampString = "538204921.740813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
-            landmarkName = "-menu:didSelectMenuAtColumn:"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
+            landmarkName = "-menu:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

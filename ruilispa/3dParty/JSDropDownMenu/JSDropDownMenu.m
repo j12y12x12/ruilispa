@@ -894,7 +894,11 @@
             [self confiMenuWithSelectRow:indexPath.row leftOrRight:leftOrRight];
         }
         
-        [self.delegate menu:self didSelectRowAtIndexPath:[JSIndexPath indexPathWithCol:self.currentSelectedMenudIndex leftOrRight:leftOrRight leftRow:_leftSelectedRow row:indexPath.row]];
+        if (_rightTableView == tableView)
+        {
+            [self.delegate menu:self didSelectRowAtIndexPath:[JSIndexPath indexPathWithCol:self.currentSelectedMenudIndex leftOrRight:leftOrRight leftRow:_leftSelectedRow row:indexPath.row]];
+        }
+
         
         if (leftOrRight==0 && haveRightTableView) {
             if (!_hadSelected) {
