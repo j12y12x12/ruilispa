@@ -24,6 +24,7 @@
 		910456972018D04C007F0F6C /* face2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 910456932018D04C007F0F6C /* face2.jpeg */; };
 		910456982018D04C007F0F6C /* face4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 910456942018D04C007F0F6C /* face4.jpeg */; };
 		9104569B2018D0E5007F0F6C /* ruili.db in Resources */ = {isa = PBXBuildFile; fileRef = 9104569A2018D0E5007F0F6C /* ruili.db */; };
+		9104569E2018D177007F0F6C /* YXProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9104569D2018D177007F0F6C /* YXProjectTableViewCell.m */; };
 		914EB856200D986B007E6EE4 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB846200D986B007E6EE4 /* FMDatabaseQueue.m */; };
 		914EB857200D986B007E6EE4 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB849200D986B007E6EE4 /* FMDatabaseAdditions.m */; };
 		914EB858200D986B007E6EE4 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB84A200D986B007E6EE4 /* FMDatabase.m */; };
@@ -101,6 +102,8 @@
 		910456932018D04C007F0F6C /* face2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = face2.jpeg; sourceTree = "<group>"; };
 		910456942018D04C007F0F6C /* face4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = face4.jpeg; sourceTree = "<group>"; };
 		9104569A2018D0E5007F0F6C /* ruili.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ruili.db; sourceTree = "<group>"; };
+		9104569C2018D177007F0F6C /* YXProjectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXProjectTableViewCell.h; sourceTree = "<group>"; };
+		9104569D2018D177007F0F6C /* YXProjectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXProjectTableViewCell.m; sourceTree = "<group>"; };
 		914EB845200D986B007E6EE4 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		914EB846200D986B007E6EE4 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		914EB847200D986B007E6EE4 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 				916EF47E200F9235001CBB6D /* YXDeviceTools.m */,
 				91FAD26F200CD02100CD3E1E /* YXViewController.h */,
 				91FAD270200CD02100CD3E1E /* YXViewController.m */,
+				9104569C2018D177007F0F6C /* YXProjectTableViewCell.h */,
+				9104569D2018D177007F0F6C /* YXProjectTableViewCell.m */,
 				91E18FC12012DD2D00706125 /* YXAddProjectViewController.h */,
 				91E18FC22012DD2D00706125 /* YXAddProjectViewController.m */,
 				91E18FDE2013013300706125 /* YXAddprojectTableViewCell.h */,
@@ -579,6 +584,7 @@
 				91E18FE72013278D00706125 /* YXSelectProjectTableViewCell.m in Sources */,
 				91E18FD62012FB6000706125 /* YXSelectProjectViewController.m in Sources */,
 				916EF477200F89A5001CBB6D /* JSDropDownMenu.m in Sources */,
+				9104569E2018D177007F0F6C /* YXProjectTableViewCell.m in Sources */,
 				914EB857200D986B007E6EE4 /* FMDatabaseAdditions.m in Sources */,
 				91E18FCA2012E19B00706125 /* YXNavBarView.m in Sources */,
 				91E18FD32012E5D700706125 /* YXProjectModel.m in Sources */,

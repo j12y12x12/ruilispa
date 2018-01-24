@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**cell*/
+typedef enum {
+    YXProject = 0, /* 项目 */
+    YXProDuct,      /* 产品 */
+    YXMeal,      /* 套餐 */
+    YXCharge    /* 充值 */
+    
+}YXCellType;
+
+
 @interface YXSQLManager : NSObject
 
 + (YXSQLManager *)shareManager;

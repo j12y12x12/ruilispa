@@ -47,4 +47,8 @@
 #import "UIView+UIViewExt.h"
 #import "YXNavBarView.h"
 #import "YXSQLManager.h"
+#import "YXProjectModel.h"
+#import "YXProductModel.h"
+#import "YXMealCardModel.h"
+#import "YXChargeCardModel.h"
 
