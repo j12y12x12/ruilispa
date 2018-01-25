@@ -9,6 +9,7 @@
 #import "YXViewController.h"
 #import "JSDropDownMenu.h"
 #import "YXAddProjectViewController.h"
+#import "YXProjectTableViewCell.h"
 
 @interface YXViewController ()<JSDropDownMenuDataSource,JSDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -35,9 +36,19 @@
 @property (strong, nonatomic) UILabel *myHeaderLabel;
 
 
+@property (strong, nonatomic) NSMutableArray *dataSource;
+
 @end
 
 @implementation YXViewController
+
+- (NSMutableArray *)dataSource
+{
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -448,12 +459,13 @@
         NSString *titleStr = [NSString stringWithFormat:@"项目•%@•%@",title,data];
         self.myHeaderLabel.text = titleStr;
         
-        if(indexPath.leftOrRight==0){
+        if(indexPath.leftOrRight==0)
+        {
             
             _currentData1Index = indexPath.row;
-            
-            return;
         }
+        
+        
         
     } else if(indexPath.column == 1){
         
@@ -500,7 +512,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 50;
+    return 150;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -517,7 +529,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -527,18 +539,17 @@
     
 //    NSString *name = dataDict[@"name"];
     
-    static NSString *CellIdentifier = @"addProjectTableCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"ProjectTableCell";
+     YXProjectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[YXProjectTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.textColor = [UIColor blackColor];
-        cell.textLabel.font = [UIFont systemFontOfSize:17];
-        cell.textLabel.textAlignment = NSTextAlignmentRight;
-        cell.textLabel.backgroundColor = [UIColor clearColor];
     }
-    cell.textLabel.text = @"test";
+    
+//    cell.textLabel.text = @"test";
+    
+    cell.cellModel = nil;
     
     return cell;
 }

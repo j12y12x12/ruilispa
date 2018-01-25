@@ -151,7 +151,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "426"
             endingLineNumber = "426"
-            landmarkName = "-menu:didSelectMenuAtColumn:"
+            landmarkName = "-menu:titleForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -167,7 +167,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "444"
             endingLineNumber = "444"
-            landmarkName = "-menu:didSelectRowAtIndexPath:"
+            landmarkName = "-menu:didSelectMenuAtColumn:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
