@@ -438,15 +438,36 @@
     {
         //套卡
         self.myHeaderLabel.text = @"套卡";
+        
+        [[YXSQLManager shareManager] searchAllMealCardInfoWithBlock:^(NSArray *cardModelArray) {
+            
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:cardModelArray];
+
+            [self loadData];
+        }];
     }
     if (index == 3)
     {
         //充值卡
         self.myHeaderLabel.text = @"充值卡";
+        
+        [[YXSQLManager shareManager] searchAllChargeCardInfoWithBlock:^(NSArray *cardModelArray) {
+          
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:cardModelArray];
+            [self loadData];
+
+        }];
+
 
     }
 }
 
+- (void)loadData
+{
+    [self.tableView reloadData];
+}
 - (void)menu:(JSDropDownMenu *)menu didSelectRowAtIndexPath:(JSIndexPath *)indexPath {
     
     
@@ -465,6 +486,21 @@
             _currentData1Index = indexPath.row;
         }
         
+        BOOL isAll = NO;
+        
+        if ([data isEqualToString:@"全部"])
+        {
+            isAll = YES;
+        }
+        
+        [[YXSQLManager shareManager] searchAllProjectWithProjectClass:title subClass:data isAll:isAll callBackBlock:^(NSMutableArray *projectArray) {
+            
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:projectArray];
+            [self loadData];
+
+        }];
+        
         
         
     } else if(indexPath.column == 1){
@@ -481,8 +517,22 @@
             
             _currentData2Index = indexPath.row;
             
-            return;
         }
+        
+        BOOL isAll = NO;
+
+        if ([data isEqualToString:@"全部"])
+        {
+            isAll = YES;
+        }
+        
+        [[YXSQLManager shareManager] searchAllProductWithBrand:title subClass:data isAll:isAll callBackBlock:^(NSMutableArray *productArray) {
+            
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:productArray];
+            [self loadData];
+
+        }];
 
 //        _currentData2Index = indexPath.row;
         
