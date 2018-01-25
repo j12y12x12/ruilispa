@@ -77,8 +77,41 @@
     [self getDropMenuData];
     
     [self initTableView];
+    
+    [self loadStartData];
 
 }
+
+- (void)loadStartData
+{
+    _currentData1Index = 0;
+    _currentData1SelectedIndex = 0;
+    NSDictionary *menuDic = [_data1 objectAtIndex:_currentData1Index];
+    NSString *title = [menuDic objectForKey:@"title"];
+    NSString *data = [[menuDic objectForKey:@"data"] objectAtIndex:_currentData1SelectedIndex];
+    
+    
+    NSString *titleStr = [NSString stringWithFormat:@"项目•%@•%@",title,data];
+    self.myHeaderLabel.text = titleStr;
+    
+    BOOL isAll = NO;
+    
+    if ([data isEqualToString:@"全部"])
+    {
+        isAll = YES;
+    }
+    
+    [[YXSQLManager shareManager] searchAllProjectWithProjectClass:title subClass:data isAll:isAll callBackBlock:^(NSMutableArray *projectArray) {
+        
+        [self.dataSource removeAllObjects];
+        [self.dataSource addObjectsFromArray:projectArray];
+        [self loadData];
+        
+    }];
+
+}
+
+
 
 - (void)initTableView
 {
@@ -585,6 +618,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+     id model = [self.dataSource objectAtIndex:indexPath.row];
 //    NSDictionary *dataDict = [self.dataArray objectAtIndex:indexPath.row];
     
 //    NSString *name = dataDict[@"name"];
@@ -599,7 +633,7 @@
     
 //    cell.textLabel.text = @"test";
     
-    cell.cellModel = nil;
+    cell.cellModel = model;
     
     return cell;
 }

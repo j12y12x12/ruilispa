@@ -33,6 +33,7 @@
         
         _iconImgView.contentMode = UIViewContentModeScaleToFill;
         
+        [self addSubview:_iconImgView];        
     }
     return _iconImgView;
 }
@@ -72,7 +73,7 @@
         _singlePriceLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:_singlePriceLabel];
     }
-    return _nameLabel;
+    return _singlePriceLabel;
 }
 
 
@@ -128,18 +129,19 @@
     
     self.iconImgView.hidden = NO;
     self.nameLabel.hidden = NO;
-    self.singlePriceLabel.hidden = NO;
-    self.cardPriceLabel.hidden = NO;
 
-    self.iconImgView.frame = CGRectMake(10, 10, 200, 180);
+    self.iconImgView.frame = CGRectMake(10, 10, 200, 130);
     
     [self setImageWithModel:cellModel];
 
     
-    self.nameLabel.hidden = NO;
     self.nameLabel.frame = CGRectMake(self.iconImgView.right + 10, 10, 120, 30);
     self.singlePriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.nameLabel.bottom + 10, 120, 30);
     self.cardPriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.singlePriceLabel.bottom + 10, 120, 30);
+
+    self.nameLabel.backgroundColor = [UIColor orangeColor];
+    self.singlePriceLabel.backgroundColor = [UIColor blueColor];
+    self.cardPriceLabel.backgroundColor = [UIColor yellowColor];
 
     if ([cellModel isKindOfClass:[YXProjectModel class]])
     {
@@ -148,9 +150,12 @@
         self.nameLabel.text = projectModel.projectName;
         
         [self.nameLabel sizeToFit];
-        
+        self.singlePriceLabel.hidden = NO;
+        self.cardPriceLabel.hidden = NO;
+
         if (projectModel.isYearCard == 1)
         {
+            
             self.yearCardLabel.hidden = NO;
             self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 10, 10, 50, 30);
             self.yearCardLabel.text = @"年卡";
@@ -171,6 +176,9 @@
     }
     if ([cellModel isKindOfClass:[YXProductModel class]])
     {
+        self.singlePriceLabel.hidden = NO;
+        self.cardPriceLabel.hidden = NO;
+
         YXProductModel *projectModel = (YXProductModel *)cellModel;
         self.nameLabel.text = projectModel.productName;
 
@@ -180,6 +188,9 @@
     }
     if ([cellModel isKindOfClass:[YXMealCardModel class]])
     {
+        self.singlePriceLabel.hidden = NO;
+        self.cardPriceLabel.hidden = NO;
+
         YXMealCardModel *projectModel = (YXMealCardModel *)cellModel;
 
         self.nameLabel.text = projectModel.mealCardName;
