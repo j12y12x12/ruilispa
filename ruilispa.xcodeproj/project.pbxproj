@@ -38,6 +38,7 @@
 		916EF477200F89A5001CBB6D /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF474200F89A5001CBB6D /* JSDropDownMenu.m */; };
 		916EF478200F89A5001CBB6D /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 916EF475200F89A5001CBB6D /* ico_make.png */; };
 		916EF47F200F9235001CBB6D /* YXDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 916EF47E200F9235001CBB6D /* YXDeviceTools.m */; };
+		919BFE5C201B4D1500E9C0F8 /* YXProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 919BFE5B201B4D1500E9C0F8 /* YXProjectViewController.m */; };
 		91E18FC02012D63A00706125 /* project.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E18FBF2012D63A00706125 /* project.plist */; };
 		91E18FC32012DD2D00706125 /* YXAddProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FC22012DD2D00706125 /* YXAddProjectViewController.m */; };
 		91E18FC62012DD4E00706125 /* YXSQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E18FC52012DD4E00706125 /* YXSQLManager.m */; };
@@ -129,6 +130,8 @@
 		916EF476200F89A5001CBB6D /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
 		916EF47D200F9235001CBB6D /* YXDeviceTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDeviceTools.h; sourceTree = "<group>"; };
 		916EF47E200F9235001CBB6D /* YXDeviceTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDeviceTools.m; sourceTree = "<group>"; };
+		919BFE5A201B4D1500E9C0F8 /* YXProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXProjectViewController.h; sourceTree = "<group>"; };
+		919BFE5B201B4D1500E9C0F8 /* YXProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXProjectViewController.m; sourceTree = "<group>"; };
 		91E18FBF2012D63A00706125 /* project.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = project.plist; sourceTree = "<group>"; };
 		91E18FC12012DD2D00706125 /* YXAddProjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXAddProjectViewController.h; sourceTree = "<group>"; };
 		91E18FC22012DD2D00706125 /* YXAddProjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXAddProjectViewController.m; sourceTree = "<group>"; };
@@ -361,6 +364,8 @@
 				916EF47E200F9235001CBB6D /* YXDeviceTools.m */,
 				91FAD26F200CD02100CD3E1E /* YXViewController.h */,
 				91FAD270200CD02100CD3E1E /* YXViewController.m */,
+				919BFE5A201B4D1500E9C0F8 /* YXProjectViewController.h */,
+				919BFE5B201B4D1500E9C0F8 /* YXProjectViewController.m */,
 				9104569C2018D177007F0F6C /* YXProjectTableViewCell.h */,
 				9104569D2018D177007F0F6C /* YXProjectTableViewCell.m */,
 				91E18FC12012DD2D00706125 /* YXAddProjectViewController.h */,
@@ -576,6 +581,7 @@
 				91E18FEE2013424100706125 /* YXProductModel.m in Sources */,
 				914EB858200D986B007E6EE4 /* FMDatabase.m in Sources */,
 				914EB859200D986B007E6EE4 /* FMDatabasePool.m in Sources */,
+				919BFE5C201B4D1500E9C0F8 /* YXProjectViewController.m in Sources */,
 				91E18FC32012DD2D00706125 /* YXAddProjectViewController.m in Sources */,
 				916EF47F200F9235001CBB6D /* YXDeviceTools.m in Sources */,
 				91FAD26E200CD02100CD3E1E /* AppDelegate.m in Sources */,
