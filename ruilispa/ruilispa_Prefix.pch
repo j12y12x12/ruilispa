@@ -44,6 +44,9 @@
 #define TABLEVIEW_COLOR [UIColor colorWithRed: 0xF0/255.0 green:0xF0/255.0 blue:0xF0/255.0 alpha:1]
 
 
+#define kVipColor [UIColor colorWithRed: 250/255.0 green:80/255.0 blue:51/255.0 alpha:1]
+
+
 #import "UIView+UIViewExt.h"
 #import "YXNavBarView.h"
 #import "YXSQLManager.h"

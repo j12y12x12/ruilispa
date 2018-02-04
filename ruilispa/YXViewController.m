@@ -121,13 +121,13 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
-    self.tableView.backgroundColor = [UIColor yellowColor];
+    self.tableView.backgroundColor = TABLEVIEW_COLOR;
     
     UIView *myHearderView = [[UIView alloc] init];
     
     myHearderView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 35);
     
-    myHearderView.backgroundColor = [UIColor cyanColor];
+    myHearderView.backgroundColor = [UIColor clearColor];
     
     self.myHeaderView = myHearderView;
     
@@ -515,12 +515,12 @@
         NSString *titleStr = [NSString stringWithFormat:@"项目•%@•%@",title,data];
         self.myHeaderLabel.text = titleStr;
         
-        if(indexPath.leftOrRight==0)
-        {
-            
-            _currentData1Index = indexPath.row;
-        }
-        
+//        if(indexPath.leftOrRight==0)
+//        {
+//
+//            _currentData1Index = indexPath.row;
+//        }
+        _currentData1Index = indexPath.leftRow;
         BOOL isAll = NO;
         
         if ([data isEqualToString:@"全部"])
@@ -548,12 +548,14 @@
         self.myHeaderLabel.text = titleStr;
 
 
-        if(indexPath.leftOrRight==0){
-            
-            _currentData2Index = indexPath.row;
-            
-        }
+//        if(indexPath.leftOrRight==0){
+//
+//            _currentData2Index = indexPath.row;
+//
+//        }
         
+        _currentData2Index = indexPath.row;
+
         BOOL isAll = NO;
 
         if ([data isEqualToString:@"全部"])
@@ -610,7 +612,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 15;
+    
+    return 1;
 }
 
 #pragma mark - UITableViewDataSource -

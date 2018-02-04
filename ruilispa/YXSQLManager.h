@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YXChargeCardModel.h"
+#import "YXProductModel.h"
+#import "YXProjectModel.h"
+#import "YXMealCardModel.h"
 
 
 /**cell*/
@@ -34,6 +38,7 @@ typedef enum {
 
 #pragma mark - 搜索产品
 - (void)searchAllProductWithBrand:(NSString *)brand subClass:(NSString *)subClass isAll:(BOOL)isAll callBackBlock:(void(^)(NSMutableArray *productArray))callBackBlock;
-
+#pragma mark - 根据名字搜索项目
+- (void)searchProjectWithName:(NSString *)projectName callBackBlock:(void(^)(YXProjectModel *projectModel))callBackBlock;
 
 @end

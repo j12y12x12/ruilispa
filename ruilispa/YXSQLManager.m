@@ -8,10 +8,6 @@
 
 #import "YXSQLManager.h"
 #import "FMDB.h"
-#import "YXChargeCardModel.h"
-#import "YXProductModel.h"
-#import "YXProjectModel.h"
-#import "YXMealCardModel.h"
 
 @interface YXSQLManager()
 @property (nonatomic,strong) FMDatabaseQueue *queue;
@@ -331,6 +327,62 @@
         }];
     });
 }
+
+#pragma mark - 根据名字搜索项目
+- (void)searchProjectWithName:(NSString *)projectName callBackBlock:(void(^)(YXProjectModel *projectModel))callBackBlock
+{
+    dispatch_async(self.myQueue, ^{
+        [_queue inDatabase:^(FMDatabase *db) {
+            YXProjectModel *projectModel = [[YXProjectModel alloc] init];
+
+            [db beginTransaction];
+            @try {
+                
+                NSString *sql = [NSString stringWithFormat:@"select * from AllProject where projectName = '%@' limit 1",projectName];
+                
+                FMResultSet *rs = [db executeQuery:sql];
+                
+
+                while ([rs next]) {
+                    
+                    projectModel.projectClass = [rs stringForColumn:@"projectClass"];
+                    
+                    projectModel.projectClass = [rs stringForColumn:@"projectClass"];
+                    projectModel.subClass = [rs stringForColumn:@"subClass"];
+                    projectModel.projectName = [rs stringForColumn:@"projectName"];
+                    projectModel.isSingleCard = [rs intForColumn:@"isSingleCard"];
+                    projectModel.singlePrice = [rs stringForColumn:@"singlePrice"];
+                    projectModel.cardPrice = [rs stringForColumn:@"cardPrice"];
+                    projectModel.count = [rs intForColumn:@"count"];
+                    projectModel.isTimeCard = [rs intForColumn:@"isTimeCard"];
+                    projectModel.isMoutheCard = [rs intForColumn:@"isMoutheCard"];
+                    projectModel.isQuarterCard = [rs intForColumn:@"isQuarterCard"];
+                    projectModel.isHalfYearCard = [rs intForColumn:@"isHalfYearCard"];
+                    projectModel.isYearCard = [rs intForColumn:@"isYearCard"];
+                    projectModel.expirCount = [rs intForColumn:@"expirCount"];
+                    projectModel.maxIncludeCount = [rs intForColumn:@"maxIncludeCount"];
+                    projectModel.marketPrice = [rs stringForColumn:@"marketPrice"];
+                    projectModel.vipPrice = [rs stringForColumn:@"vipPrice"];
+                    projectModel.singleConsumePrice = [rs stringForColumn:@"singleConsumePrice"];
+                    projectModel.imagePath = [rs stringForColumn:@"imagePath"];
+                    projectModel.howlong = [rs stringForColumn:@"howlong"];
+                    projectModel.introduce = [rs stringForColumn:@"introduce"];
+                    
+                }
+                [rs close];
+                
+            } @catch (NSException *exception) {
+                [db rollback];
+            } @finally {
+                [db commit];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    callBackBlock(projectModel);
+                });
+            }
+        }];
+    });
+}
+
 
 
 @end

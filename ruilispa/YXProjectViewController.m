@@ -7,12 +7,13 @@
 //
 
 #import "YXProjectViewController.h"
+#import "YXIncludeProjectTableViewCell.h"
 
 #define kNameFont 22
 #define klabelFont 20
 #define kTextFont 20
 
-@interface YXProjectViewController ()
+@interface YXProjectViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) YXNavBarView *navBarView;
 
@@ -45,6 +46,9 @@
 
 @property (nonatomic, strong) UILabel *singelConcumLabel;
 
+@property (strong, nonatomic) UITableView *mealTableView;
+
+@property (strong, nonatomic) NSMutableArray *dataArray;
 @end
 
 @implementation YXProjectViewController
@@ -74,7 +78,7 @@
         
         _iconImgView.contentMode = UIViewContentModeScaleAspectFit;
         
-        _iconImgView.backgroundColor = [UIColor orangeColor];
+        _iconImgView.backgroundColor = TABLEVIEW_COLOR;
         [self.scrollView addSubview:_iconImgView];
     }
     return _iconImgView;
@@ -159,7 +163,7 @@
     if (!_cardPriceLabel) {
         _cardPriceLabel = [[UILabel alloc] init];
         _cardPriceLabel.font = [UIFont systemFontOfSize:klabelFont];
-        _cardPriceLabel.textColor = [UIColor blackColor];
+        _cardPriceLabel.textColor = kVipColor;
         _cardPriceLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_cardPriceLabel];
     }
@@ -241,7 +245,7 @@
     [self iniNavbarView];
     self.iconImgView.frame = CGRectMake(10, 10, SCREEN_WIDTH - 20, 400);
     
-    
+
     
     id model = self.model;
     
@@ -274,10 +278,14 @@
 
         if (projectModel.isYearCard == 1)
         {
-            self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 10, self.nameLabel.y - 3, 60, 30);
-            self.yearCardLabel.backgroundColor = [UIColor orangeColor];
+            self.yearCardLabel.hidden = NO;
+            self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 10, self.nameLabel.y - 3, 50, 30);
             self.yearCardLabel.text = @"年卡";
-            
+            self.yearCardLabel.backgroundColor = kVipColor;
+            self.yearCardLabel.textColor = [UIColor whiteColor];
+            self.yearCardLabel.layer.cornerRadius = 4;
+            self.yearCardLabel.layer.masksToBounds = YES;
+            [self.yearCardLabel sizeToFit];
             self.singlePriceLabel.text = [NSString stringWithFormat:@"市场价：¥%@",projectModel.marketPrice];
             self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠价：¥%@",projectModel.vipPrice];
             
@@ -300,7 +308,7 @@
             self.singlePriceLabel.text = [NSString stringWithFormat:@"单次价：¥%@",projectModel.singlePrice];
             self.cardPriceLabel.text = [NSString stringWithFormat:@"办卡价：¥%@",projectModel.cardPrice];
             
-            self.countLabel.text = [NSString stringWithFormat:@"包含次数：%d",projectModel.count];
+            self.countLabel.text = [NSString stringWithFormat:@"包含次数：%d次",projectModel.count];
             
             self.introduceLabel.frame = CGRectMake(self.nameLabel.x, self.countLabel.bottom + 10, SCREEN_WIDTH, 30);
             
@@ -311,7 +319,16 @@
 
         }
         
+        CGFloat height = [self heightForString:self.introduceTextView andWidth:self.introduceTextView.width];
         
+        if (height > 120)
+        {
+            self.introduceTextView.height = height;
+        }
+
+        
+        self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.introduceTextView.bottom + 50);
+
         
     }
     if ([model isKindOfClass:[YXProductModel class]])
@@ -329,7 +346,7 @@
         
         [self.nameLabel sizeToFit];
         
-        self.howlongLabel.text = [NSString stringWithFormat:@"公司：%@",projectModel.brand];
+        self.howlongLabel.text = [NSString stringWithFormat:@"分类：%@",projectModel.subClass];
 
         self.expirLabel.frame = CGRectMake(self.nameLabel.x, self.nameLabel.bottom + 10, SCREEN_WIDTH, 30);
         
@@ -350,12 +367,64 @@
         self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
         self.introduceTextView.text = projectModel.introduce;
         
+        CGFloat height = [self heightForString:self.introduceTextView andWidth:self.introduceTextView.width];
+        
+        if (height > 120)
+        {
+            self.introduceTextView.height = height;
+        }
+        
+        self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.introduceTextView.bottom + 50);
+
 
     }
     if ([model isKindOfClass:[YXMealCardModel class]])
     {
         YXMealCardModel *projectModel = (YXMealCardModel *)model;
         self.navBarView.title = projectModel.mealCardName;
+        
+        self.nameLabel.text = projectModel.mealCardName;
+        
+        self.singlePriceLabel.frame = CGRectMake(self.nameLabel.x, self.nameLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.cardPriceLabel.frame = CGRectMake(self.nameLabel.x, self.singlePriceLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.singlePriceLabel.text = [NSString stringWithFormat:@"市场价：¥%@",projectModel.marketPrice];
+        self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠价：¥%@",projectModel.vipPrice];
+        
+        self.expirLabel.frame = CGRectMake(self.nameLabel.x, self.cardPriceLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.expirLabel.text = @"过期时间：不限";
+        
+        self.introduceLabel.frame = CGRectMake(self.nameLabel.x, self.expirLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.introduceLabel.text = @"包含项目：";
+
+        NSString *includePro = projectModel.includeProject;
+        
+        NSArray *proArr = [includePro componentsSeparatedByString:@","];
+        
+        
+        NSMutableArray *mealDataArray = [NSMutableArray array];
+        self.dataArray = mealDataArray;
+        for (NSString *proStr in proArr)
+        {
+            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+            
+            NSArray *proArr2 = [proStr componentsSeparatedByString:@"="];
+            
+            dict[@"name"] = proArr2.firstObject;
+            dict[@"count"] = proArr2.lastObject;
+            
+            [mealDataArray addObject:dict];
+        }
+        
+        [self initTableView];
+        
+        self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.mealTableView.bottom + 50);
+
+        
+
 
     }
     if ([model isKindOfClass:[YXChargeCardModel class]])
@@ -363,14 +432,46 @@
         YXChargeCardModel *projectModel = (YXChargeCardModel *)model;
         self.navBarView.title = projectModel.chargeCardName;
 
+        self.nameLabel.text = projectModel.chargeCardName;
+
+        self.singlePriceLabel.frame = CGRectMake(self.nameLabel.x, self.nameLabel.bottom + 10, SCREEN_WIDTH, 30);
         
+        NSString *str111 = [NSString stringWithFormat:@"充值 ¥%@",projectModel.chargeMoney];
+        
+        self.singlePriceLabel.text = str111;
+        self.singlePriceLabel.textColor = kVipColor;
+
+        self.introduceLabel.frame = CGRectMake(self.nameLabel.x, self.singlePriceLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.introduceLabel.text = @"功能介绍：";
+        
+        self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+        self.introduceTextView.text = projectModel.introduce;
+
+        CGFloat height = [self heightForString:self.introduceTextView andWidth:self.introduceTextView.width];
+        
+        if (height > 120)
+        {
+            self.introduceTextView.height = height;
+        }
+
+        
+        self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.introduceTextView.bottom + 50);
+
     }
 
-    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.introduceTextView.bottom + 50);
 
 }
 
+- (void)initTableView
+{
+    self.mealTableView = [[UITableView alloc] initWithFrame:CGRectMake(10,self.introduceLabel.bottom+10, SCREEN_WIDTH - 20, 100 * self.dataArray.count) style:UITableViewStylePlain];
+    self.mealTableView.dataSource = self;
+    self.mealTableView.delegate = self;
+    [self.scrollView addSubview:self.mealTableView];
+    self.mealTableView.backgroundColor = TABLEVIEW_COLOR;
 
+}
 
 - (void)setImageWithModel:(id)model
 {
@@ -483,5 +584,71 @@
     
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSDictionary *dataDict = [self.dataArray objectAtIndex:indexPath.row];
+    //    NSDictionary *dataDict = [self.dataArray objectAtIndex:indexPath.row];
+    
+    NSString *name = dataDict[@"name"];
+    
+    static NSString *CellIdentifier = @"ProjectTableCell";
+    YXIncludeProjectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[YXIncludeProjectTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    
+    cell.dict = dataDict;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    YXIncludeProjectTableViewCell *cell = (YXIncludeProjectTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    YXProjectViewController *pjVC = [[YXProjectViewController alloc] init];
+    
+    pjVC.model = cell.projectModel;
+    
+    [self.navigationController pushViewController:pjVC animated:YES];
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 100;
+}
+
+
+/**
+ @method 获取指定宽度width的字符串在UITextView上的高度
+ @param textView 待计算的UITextView
+ @param Width 限制字符串显示区域的宽度
+ @result float 返回的高度
+ */
+- (float) heightForString:(UITextView *)textView andWidth:(float)width
+{
+    CGSize sizeToFit = [textView sizeThatFits:CGSizeMake(width, MAXFLOAT)];
+    return sizeToFit.height;
+}
 
 @end

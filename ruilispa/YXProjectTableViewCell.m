@@ -42,7 +42,7 @@
 {
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.font = [UIFont systemFontOfSize:16];
+        _nameLabel.font = [UIFont systemFontOfSize:20];
         _nameLabel.textColor = [UIColor blackColor];
         _nameLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:_nameLabel];
@@ -54,10 +54,10 @@
 {
     if (!_yearCardLabel) {
         _yearCardLabel = [[UILabel alloc] init];
-        _yearCardLabel.font = [UIFont systemFontOfSize:13];
+        _yearCardLabel.font = [UIFont systemFontOfSize:15];
         _yearCardLabel.textColor = [UIColor whiteColor];
         _yearCardLabel.textAlignment = NSTextAlignmentLeft;
-        _yearCardLabel.backgroundColor = [UIColor redColor];
+        _yearCardLabel.backgroundColor = kVipColor;
         [self addSubview:_yearCardLabel];
     }
     return _yearCardLabel;
@@ -68,7 +68,7 @@
 {
     if (!_singlePriceLabel) {
         _singlePriceLabel = [[UILabel alloc] init];
-        _singlePriceLabel.font = [UIFont systemFontOfSize:14];
+        _singlePriceLabel.font = [UIFont systemFontOfSize:18];
         _singlePriceLabel.textColor = [UIColor blackColor];
         _singlePriceLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:_singlePriceLabel];
@@ -81,8 +81,8 @@
 {
     if (!_cardPriceLabel) {
         _cardPriceLabel = [[UILabel alloc] init];
-        _cardPriceLabel.font = [UIFont systemFontOfSize:14];
-        _cardPriceLabel.textColor = [UIColor blackColor];
+        _cardPriceLabel.font = [UIFont systemFontOfSize:18];
+        _cardPriceLabel.textColor = kVipColor;
         _cardPriceLabel.textAlignment = NSTextAlignmentLeft;
         [self addSubview:_cardPriceLabel];
     }
@@ -131,17 +131,22 @@
     self.nameLabel.hidden = NO;
 
     self.iconImgView.frame = CGRectMake(10, 10, 200, 130);
-    
+    self.yearCardLabel.hidden = YES;
+    self.singlePriceLabel.hidden = YES;
+    self.cardPriceLabel.hidden = YES;
+
+    self.singlePriceLabel.textColor = [UIColor blackColor];
+
     [self setImageWithModel:cellModel];
 
     
-    self.nameLabel.frame = CGRectMake(self.iconImgView.right + 10, 10, 120, 30);
+    self.nameLabel.frame = CGRectMake(self.iconImgView.right + 10, 20, 250, 30);
     self.singlePriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.nameLabel.bottom + 10, 120, 30);
     self.cardPriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.singlePriceLabel.bottom + 10, 120, 30);
 
-    self.nameLabel.backgroundColor = [UIColor orangeColor];
-    self.singlePriceLabel.backgroundColor = [UIColor blueColor];
-    self.cardPriceLabel.backgroundColor = [UIColor yellowColor];
+    self.nameLabel.backgroundColor = [UIColor clearColor];
+    self.singlePriceLabel.backgroundColor = [UIColor clearColor];
+    self.cardPriceLabel.backgroundColor = [UIColor clearColor];
 
     if ([cellModel isKindOfClass:[YXProjectModel class]])
     {
@@ -157,18 +162,21 @@
         {
             
             self.yearCardLabel.hidden = NO;
-            self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 10, 10, 50, 30);
+            self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 15, 22, 50, 20);
             self.yearCardLabel.text = @"年卡";
-            
-            self.singlePriceLabel.text = [NSString stringWithFormat:@"市场 %@",projectModel.marketPrice];
-            self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠 %@",projectModel.vipPrice];
+            [self.yearCardLabel sizeToFit];
+            self.yearCardLabel.layer.cornerRadius = 3;
+
+            self.yearCardLabel.layer.masksToBounds = YES;
+            self.singlePriceLabel.text = [NSString stringWithFormat:@"市场价 ¥%@",projectModel.marketPrice];
+            self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠价 ¥%@",projectModel.vipPrice];
             
 
         }
         else
         {
-            self.singlePriceLabel.text = [NSString stringWithFormat:@"单次 %@",projectModel.singlePrice];
-            self.cardPriceLabel.text = [NSString stringWithFormat:@"办卡 %@",projectModel.cardPrice];
+            self.singlePriceLabel.text = [NSString stringWithFormat:@"单次 ¥%@",projectModel.singlePrice];
+            self.cardPriceLabel.text = [NSString stringWithFormat:@"办卡 ¥%@",projectModel.cardPrice];
         }
         
         
@@ -182,8 +190,8 @@
         YXProductModel *projectModel = (YXProductModel *)cellModel;
         self.nameLabel.text = projectModel.productName;
 
-        self.singlePriceLabel.text = [NSString stringWithFormat:@"市场 %@",projectModel.marketPrice];
-        self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠 %@",projectModel.vipPrice];
+        self.singlePriceLabel.text = [NSString stringWithFormat:@"市场价 ¥%@",projectModel.marketPrice];
+        self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠价 ¥%@",projectModel.vipPrice];
 
     }
     if ([cellModel isKindOfClass:[YXMealCardModel class]])
@@ -195,19 +203,23 @@
 
         self.nameLabel.text = projectModel.mealCardName;
         
-        self.singlePriceLabel.text = [NSString stringWithFormat:@"市场 %@",projectModel.marketPrice];
-        self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠 %@",projectModel.vipPrice];
+        self.singlePriceLabel.text = [NSString stringWithFormat:@"市场价 ¥%@",projectModel.marketPrice];
+        self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠价 ¥%@",projectModel.vipPrice];
 
         
     }
     if ([cellModel isKindOfClass:[YXChargeCardModel class]])
     {
-
+        self.nameLabel.y = 30;
+        self.singlePriceLabel.y = self.nameLabel.bottom + 20;
+        self.singlePriceLabel.hidden = NO;
         YXChargeCardModel *projectModel = (YXChargeCardModel *)cellModel;
         self.nameLabel.text = projectModel.chargeCardName;
         
-        self.singlePriceLabel.text = [NSString stringWithFormat:@"充值 %@",projectModel.chargeMoney];        
+        self.singlePriceLabel.textColor = kVipColor;
+        self.singlePriceLabel.text = [NSString stringWithFormat:@"充值 ¥%@",projectModel.chargeMoney];
 
+        
     }
     
 }
