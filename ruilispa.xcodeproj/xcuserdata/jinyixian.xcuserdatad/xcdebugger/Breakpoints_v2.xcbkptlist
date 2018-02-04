@@ -114,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ruilispa/YXViewController.m"
-            timestampString = "538586612.260906"
+            timestampString = "539404544.020061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "459"
-            endingLineNumber = "459"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
             landmarkName = "-menu:titleForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ruilispa/YXViewController.m"
-            timestampString = "538586612.261227"
+            timestampString = "539404544.020118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "477"
-            endingLineNumber = "477"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
             landmarkName = "-menu:didSelectMenuAtColumn:"
             landmarkType = "7">
          </BreakpointContent>
@@ -161,28 +161,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ruilispa/YXProjectTableViewCell.m"
-            timestampString = "538586612.261476"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "-setCellModel:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ruilispa/YXViewController.m"
-            timestampString = "538586612.261515"
+            timestampString = "539404544.020171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "507"
-            endingLineNumber = "507"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "-menu:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>

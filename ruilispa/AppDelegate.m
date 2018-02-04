@@ -27,7 +27,9 @@
     
     YXViewController *rootVC = [[YXViewController alloc] init];
     
-    [self.window setRootViewController:rootVC];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    
+    [self.window setRootViewController:navVC];
 
     
     [YXDeviceTools sharedInstance].myScreenWidth = MIN(SCREEN_WIDTH, SCREEN_HEIGHT);

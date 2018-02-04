@@ -10,6 +10,7 @@
 #import "JSDropDownMenu.h"
 #import "YXAddProjectViewController.h"
 #import "YXProjectTableViewCell.h"
+#import "YXProjectViewController.h"
 
 @interface YXViewController ()<JSDropDownMenuDataSource,JSDropDownMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -54,6 +55,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.navigationController.navigationBar.hidden = YES;
     
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
     
@@ -589,6 +591,14 @@
     
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    YXProjectTableViewCell *cell = (YXProjectTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    YXProjectViewController *pjVC = [[YXProjectViewController alloc] init];
+    
+    pjVC.model = cell.cellModel;
+    
+    [self.navigationController pushViewController:pjVC animated:YES];
     
 }
 
