@@ -311,7 +311,6 @@
 
         }
         
-        self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.introduceTextView.bottom + 50);
         
         
     }
@@ -320,6 +319,37 @@
         YXProductModel *projectModel = (YXProductModel *)model;
         
         self.navBarView.title = projectModel.productName;
+        
+        self.nameLabel.text = projectModel.productName;
+
+        self.howlongLabel.textAlignment = NSTextAlignmentRight;
+        
+        CGFloat howlongW = 150;
+        self.howlongLabel.frame = CGRectMake(SCREEN_WIDTH - howlongW - 10, self.nameLabel.y - 5, howlongW, 30);
+        
+        [self.nameLabel sizeToFit];
+        
+        self.howlongLabel.text = [NSString stringWithFormat:@"公司：%@",projectModel.brand];
+
+        self.expirLabel.frame = CGRectMake(self.nameLabel.x, self.nameLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.expirLabel.text = [NSString stringWithFormat:@"适用部位：%@",projectModel.usePart];
+        
+        self.singlePriceLabel.frame = CGRectMake(self.nameLabel.x, self.expirLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.cardPriceLabel.frame = CGRectMake(self.nameLabel.x, self.singlePriceLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.singlePriceLabel.text = [NSString stringWithFormat:@"市场价：¥%@",projectModel.marketPrice];
+        self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠价：¥%@",projectModel.vipPrice];
+        
+        
+        self.introduceLabel.frame = CGRectMake(self.nameLabel.x, self.cardPriceLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.introduceLabel.text = @"功能介绍：";
+        
+        self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+        self.introduceTextView.text = projectModel.introduce;
+        
 
     }
     if ([model isKindOfClass:[YXMealCardModel class]])
@@ -335,6 +365,8 @@
 
         
     }
+
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.introduceTextView.bottom + 50);
 
 }
 

@@ -17,4 +17,8 @@
 //获取单例
 + (instancetype)sharedInstance;
 
+
++ (NSDictionary *)dictWithJson:(NSString *)jsonString;
++ (NSArray *)arrayWithJson:(NSString *)jsonString;
+
 @end

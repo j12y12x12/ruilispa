@@ -31,7 +31,7 @@
     if (!_iconImgView) {
         _iconImgView = [[UIImageView alloc] init];
         
-        _iconImgView.contentMode = UIViewContentModeScaleToFill;
+        _iconImgView.contentMode = UIViewContentModeScaleAspectFit;
         
         [self addSubview:_iconImgView];        
     }

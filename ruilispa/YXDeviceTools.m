@@ -21,4 +21,26 @@ static YXDeviceTools *manager = nil;
     return manager;
 }
 
+// 将JSON串转换为字典
++ (NSDictionary *)dictWithJson:(NSString *)jsonString
+{
+    NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    if (data == nil) {
+        return [NSDictionary dictionary];
+    }
+    NSError *error;
+    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
+// 将JSON串转换为数组
++ (NSArray *)arrayWithJson:(NSString *)jsonString
+{
+    NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    if (data == nil) {
+        return [NSArray array];
+    }
+    NSError *error;
+    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+}
+
 @end

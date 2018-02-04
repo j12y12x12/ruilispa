@@ -540,7 +540,7 @@
         
     } else if(indexPath.column == 1){
         
-        NSDictionary *menuDic = [_data1 objectAtIndex:indexPath.leftRow];
+        NSDictionary *menuDic = [_data2 objectAtIndex:indexPath.leftRow];
         NSString *title = [menuDic objectForKey:@"title"];
         NSString *data = [[menuDic objectForKey:@"data"] objectAtIndex:indexPath.row];
         
