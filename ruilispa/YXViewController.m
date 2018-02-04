@@ -117,17 +117,11 @@
 
 - (void)initTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,self.menu.bottom, SCREEN_WIDTH, SCREEN_HEIGHT-self.menu.bottom) style:UITableViewStyleGrouped];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    [self.view addSubview:self.tableView];
-    self.tableView.backgroundColor = TABLEVIEW_COLOR;
-    
     UIView *myHearderView = [[UIView alloc] init];
     
-    myHearderView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 35);
+    myHearderView.frame = CGRectMake(0, self.menu.bottom, SCREEN_WIDTH, 35);
     
-    myHearderView.backgroundColor = [UIColor clearColor];
+    myHearderView.backgroundColor = TABLEVIEW_COLOR;
     
     self.myHeaderView = myHearderView;
     
@@ -142,10 +136,15 @@
     self.myHeaderLabel = hearderLabel;
     
     [self.myHeaderView addSubview:hearderLabel];
+    [self.view addSubview:self.myHeaderView];
+
     
-    self.tableView.tableHeaderView = self.myHeaderView;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,self.myHeaderView.bottom, SCREEN_WIDTH, SCREEN_HEIGHT-self.myHeaderView.bottom) style:UITableViewStyleGrouped];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.view addSubview:self.tableView];
+    self.tableView.backgroundColor = TABLEVIEW_COLOR;
     
-    hearderLabel.text = @"面部''";
     
 }
 
@@ -172,18 +171,25 @@
 
 
 
-- (NSMutableArray *)getProjectOrProductDataWithPlist:(NSString *)plist
+- (NSMutableArray *)getProjectDataWithPlist:(NSString *)plist
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:plist ofType:nil];
     
     NSMutableDictionary *projectDict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     
-    NSArray *keyArray = [projectDict allKeys];
-    
+    NSMutableArray *sortArray = [NSMutableArray array];
+    [sortArray addObject:@"面部"];
+    [sortArray addObject:@"眼部"];
+    [sortArray addObject:@"胸部"];
+    [sortArray addObject:@"颈部护理"];
+    [sortArray addObject:@"减肥"];
+    [sortArray addObject:@"养生"];
+    [sortArray addObject:@"SPA"];
+
     
     NSMutableArray *projectMenuArr = [NSMutableArray array];
     
-    for (NSString *keyClass in keyArray)
+    for (NSString *keyClass in sortArray)
     {
         NSMutableDictionary *menuDict = [NSMutableDictionary dictionary];
         
@@ -206,13 +212,49 @@
     return projectMenuArr;
 }
 
+- (NSMutableArray *)getProductDataWithPlist:(NSString *)plist
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:plist ofType:nil];
+    
+    NSMutableDictionary *projectDict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+    
+    NSMutableArray *sortArray = [NSMutableArray array];
+    [sortArray addObject:@"产品"];
+    [sortArray addObject:@"奥薇"];
+    
+    NSMutableArray *projectMenuArr = [NSMutableArray array];
+    
+    for (NSString *keyClass in sortArray)
+    {
+        NSMutableDictionary *menuDict = [NSMutableDictionary dictionary];
+        
+        menuDict[@"title"] = keyClass;
+        
+        NSArray *calssArray = [[projectDict objectForKey:keyClass] objectForKey:@"class"];
+        
+        NSMutableArray *allClassArray = [NSMutableArray array];
+        
+        [allClassArray addObject:@"全部"];
+        
+        [allClassArray addObjectsFromArray:calssArray];
+        
+        menuDict[@"data"] = allClassArray;
+        
+        [projectMenuArr addObject:menuDict];
+        
+    }
+    
+    return projectMenuArr;
+}
+
+
 - (void)getDropMenuData
 {
 
     
-    NSMutableArray *projectArr = [self getProjectOrProductDataWithPlist:@"project.plist"];
+    NSMutableArray *projectArr = [self getProjectDataWithPlist:@"project.plist" ];
     
-    NSMutableArray *productArr = [self getProjectOrProductDataWithPlist:@"product.plist"];
+    NSMutableArray *productArr = [self getProductDataWithPlist:@"product.plist"];
 
     
     // 指定默认选中
@@ -554,7 +596,7 @@
 //
 //        }
         
-        _currentData2Index = indexPath.row;
+        _currentData2Index = indexPath.leftRow;
 
         BOOL isAll = NO;
 

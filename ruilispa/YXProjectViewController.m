@@ -300,7 +300,7 @@
             
             self.introduceLabel.text = @"功能介绍：";
             
-            self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+            self.introduceTextView.frame = CGRectMake(20, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 40, 120);
             self.introduceTextView.text = projectModel.introduce;
         }
         else
@@ -314,7 +314,7 @@
             
             self.introduceLabel.text = @"功能介绍：";
             
-            self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+            self.introduceTextView.frame = CGRectMake(20, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 40, 120);
             self.introduceTextView.text = projectModel.introduce;
 
         }
@@ -364,7 +364,7 @@
         
         self.introduceLabel.text = @"功能介绍：";
         
-        self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+        self.introduceTextView.frame = CGRectMake(20, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 40, 120);
         self.introduceTextView.text = projectModel.introduce;
         
         CGFloat height = [self heightForString:self.introduceTextView andWidth:self.introduceTextView.width];
@@ -445,7 +445,7 @@
         
         self.introduceLabel.text = @"功能介绍：";
         
-        self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+        self.introduceTextView.frame = CGRectMake(20, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 40, 120);
         self.introduceTextView.text = projectModel.introduce;
 
         CGFloat height = [self heightForString:self.introduceTextView andWidth:self.introduceTextView.width];

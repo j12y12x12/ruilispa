@@ -2,11 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>面部</key>
+	<key>减肥</key>
 	<dict>
 		<key>class</key>
 		<array>
-			<string>面部美颜</string>
+			<string>减肥塑身</string>
 		</array>
 	</dict>
 	<key>眼部</key>
@@ -31,26 +31,26 @@
 			<string>身体调养</string>
 		</array>
 	</dict>
+	<key>颈部护理</key>
+	<dict>
+		<key>class</key>
+		<array>
+			<string>夏日美颈</string>
+		</array>
+	</dict>
+	<key>面部</key>
+	<dict>
+		<key>class</key>
+		<array>
+			<string>面部美颜</string>
+		</array>
+	</dict>
 	<key>胸部</key>
 	<dict>
 		<key>class</key>
 		<array>
 			<string>减龄</string>
 			<string>四维经穴</string>
-		</array>
-	</dict>
-	<key>减肥</key>
-	<dict>
-		<key>class</key>
-		<array>
-			<string>减肥塑身</string>
-		</array>
-	</dict>
-	<key>颈部护理</key>
-	<dict>
-		<key>class</key>
-		<array>
-			<string>夏日美颈</string>
 		</array>
 	</dict>
 </dict>
