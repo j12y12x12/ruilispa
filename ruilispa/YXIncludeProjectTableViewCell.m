@@ -102,7 +102,7 @@
 {
     _dict = dict;
     self.iconImgView.frame = CGRectMake(10, 10, 120, 100 - 20);
-    self.backgroundColor = [UIColor cyanColor];
+    self.backgroundColor = RGBACOLOR(250, 250, 250, 1);
     [[YXSQLManager shareManager] searchProjectWithName:dict[@"name"] callBackBlock:^(YXProjectModel *projectModel) {
         
         self.projectModel = projectModel;

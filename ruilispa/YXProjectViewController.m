@@ -11,7 +11,7 @@
 
 #define kNameFont 22
 #define klabelFont 20
-#define kTextFont 20
+#define kTextFont 18
 
 @interface YXProjectViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -174,8 +174,8 @@
 {
     if (!_yearCardLabel) {
         _yearCardLabel = [[UILabel alloc] init];
-        _yearCardLabel.font = [UIFont systemFontOfSize:klabelFont];
-        _yearCardLabel.textColor = [UIColor blackColor];
+        _yearCardLabel.font = [UIFont systemFontOfSize:17];
+        _yearCardLabel.textColor = [UIColor whiteColor];
         _yearCardLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_yearCardLabel];
     }
@@ -200,10 +200,10 @@
         UITextView *texView = [[UITextView alloc] init];
         texView.editable = NO;
         
-        texView.layer.borderColor = [UIColor grayColor].CGColor;
+        texView.layer.borderColor = RGBACOLOR(220, 220, 220, 1).CGColor;
         texView.layer.borderWidth = 1.0;
         texView.layer.cornerRadius = 5.0;
-        texView.font = [UIFont systemFontOfSize:klabelFont];
+        texView.font = [UIFont systemFontOfSize:kTextFont];
         _introduceTextView = texView;
         [self.scrollView addSubview:texView];
     }
@@ -279,7 +279,7 @@
         if (projectModel.isYearCard == 1)
         {
             self.yearCardLabel.hidden = NO;
-            self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 10, self.nameLabel.y - 3, 50, 30);
+            self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 10, self.nameLabel.y + 4, 50, 25);
             self.yearCardLabel.text = @"年卡";
             self.yearCardLabel.backgroundColor = kVipColor;
             self.yearCardLabel.textColor = [UIColor whiteColor];
