@@ -8,6 +8,10 @@
 
 #import "YXProjectViewController.h"
 
+#define kNameFont 22
+#define klabelFont 20
+#define kTextFont 20
+
 @interface YXProjectViewController ()
 
 @property (strong, nonatomic) YXNavBarView *navBarView;
@@ -33,8 +37,13 @@
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 
+@property (nonatomic, strong) UILabel *introduceLabel;
+
 @property (strong, nonatomic) UITextView *introduceTextView;
 
+@property (nonatomic, strong) UILabel *expirLabel;
+
+@property (nonatomic, strong) UILabel *singelConcumLabel;
 
 @end
 
@@ -75,7 +84,7 @@
 {
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.font = [UIFont systemFontOfSize:16];
+        _nameLabel.font = [UIFont systemFontOfSize:kNameFont];
         _nameLabel.textColor = [UIColor blackColor];
         _nameLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_nameLabel];
@@ -87,7 +96,7 @@
 {
     if (!_howlongLabel) {
         _howlongLabel = [[UILabel alloc] init];
-        _howlongLabel.font = [UIFont systemFontOfSize:14];
+        _howlongLabel.font = [UIFont systemFontOfSize:klabelFont];
         _howlongLabel.textColor = [UIColor grayColor];
         _howlongLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_howlongLabel];
@@ -95,11 +104,36 @@
     return _howlongLabel;
 }
 
+- (UILabel *)expirLabel
+{
+    if (!_expirLabel) {
+        _expirLabel = [[UILabel alloc] init];
+        _expirLabel.font = [UIFont systemFontOfSize:klabelFont];
+        _expirLabel.textColor = [UIColor blackColor];
+        _expirLabel.textAlignment = NSTextAlignmentLeft;
+        [self.scrollView addSubview:_expirLabel];
+    }
+    return _expirLabel;
+}
+
+- (UILabel *)singelConcumLabel
+{
+    if (!_singelConcumLabel) {
+        _singelConcumLabel = [[UILabel alloc] init];
+        _singelConcumLabel.font = [UIFont systemFontOfSize:klabelFont];
+        _singelConcumLabel.textColor = [UIColor grayColor];
+        _singelConcumLabel.textAlignment = NSTextAlignmentLeft;
+        [self.scrollView addSubview:_singelConcumLabel];
+    }
+    return _singelConcumLabel;
+}
+
+
 - (UILabel *)singlePriceLabel
 {
     if (!_singlePriceLabel) {
         _singlePriceLabel = [[UILabel alloc] init];
-        _singlePriceLabel.font = [UIFont systemFontOfSize:14];
+        _singlePriceLabel.font = [UIFont systemFontOfSize:klabelFont];
         _singlePriceLabel.textColor = [UIColor blackColor];
         _singlePriceLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_singlePriceLabel];
@@ -107,11 +141,24 @@
     return _singlePriceLabel;
 }
 
+- (UILabel *)introduceLabel
+{
+    if (!_introduceLabel) {
+        _introduceLabel = [[UILabel alloc] init];
+        _introduceLabel.font = [UIFont systemFontOfSize:klabelFont];
+        _introduceLabel.textColor = [UIColor blackColor];
+        _introduceLabel.textAlignment = NSTextAlignmentLeft;
+        [self.scrollView addSubview:_introduceLabel];
+    }
+    return _introduceLabel;
+}
+
+
 - (UILabel *)cardPriceLabel
 {
     if (!_cardPriceLabel) {
         _cardPriceLabel = [[UILabel alloc] init];
-        _cardPriceLabel.font = [UIFont systemFontOfSize:14];
+        _cardPriceLabel.font = [UIFont systemFontOfSize:klabelFont];
         _cardPriceLabel.textColor = [UIColor blackColor];
         _cardPriceLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_cardPriceLabel];
@@ -123,7 +170,7 @@
 {
     if (!_yearCardLabel) {
         _yearCardLabel = [[UILabel alloc] init];
-        _yearCardLabel.font = [UIFont systemFontOfSize:14];
+        _yearCardLabel.font = [UIFont systemFontOfSize:klabelFont];
         _yearCardLabel.textColor = [UIColor blackColor];
         _yearCardLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_yearCardLabel];
@@ -135,7 +182,7 @@
 {
     if (!_countLabel) {
         _countLabel = [[UILabel alloc] init];
-        _countLabel.font = [UIFont systemFontOfSize:14];
+        _countLabel.font = [UIFont systemFontOfSize:klabelFont];
         _countLabel.textColor = [UIColor blackColor];
         _countLabel.textAlignment = NSTextAlignmentLeft;
         [self.scrollView addSubview:_countLabel];
@@ -152,8 +199,9 @@
         texView.layer.borderColor = [UIColor grayColor].CGColor;
         texView.layer.borderWidth = 1.0;
         texView.layer.cornerRadius = 5.0;
-        
+        texView.font = [UIFont systemFontOfSize:klabelFont];
         _introduceTextView = texView;
+        [self.scrollView addSubview:texView];
     }
     
     return _introduceTextView;
@@ -191,7 +239,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self iniNavbarView];
-    self.iconImgView.frame = CGRectMake(10, 10, SCREEN_WIDTH - 20, 200);
+    self.iconImgView.frame = CGRectMake(10, 10, SCREEN_WIDTH - 20, 400);
     
     
     
@@ -209,9 +257,61 @@
         
         self.nameLabel.text = projectModel.projectName;
         
+        self.howlongLabel.textAlignment = NSTextAlignmentRight;
+        
+        CGFloat howlongW = 150;
+        self.howlongLabel.frame = CGRectMake(SCREEN_WIDTH - howlongW - 10, self.nameLabel.y - 5, howlongW, 30);
         
         [self.nameLabel sizeToFit];
         
+        self.howlongLabel.text = [NSString stringWithFormat:@"时长：%@分钟",projectModel.howlong];
+        
+        self.singlePriceLabel.frame = CGRectMake(self.nameLabel.x, self.nameLabel.bottom + 10, SCREEN_WIDTH, 30);
+
+        self.cardPriceLabel.frame = CGRectMake(self.nameLabel.x, self.singlePriceLabel.bottom + 10, SCREEN_WIDTH, 30);
+        
+        self.countLabel.frame = CGRectMake(self.nameLabel.x, self.cardPriceLabel.bottom + 10, SCREEN_WIDTH, 30);
+
+        if (projectModel.isYearCard == 1)
+        {
+            self.yearCardLabel.frame = CGRectMake(self.nameLabel.right + 10, self.nameLabel.y - 3, 60, 30);
+            self.yearCardLabel.backgroundColor = [UIColor orangeColor];
+            self.yearCardLabel.text = @"年卡";
+            
+            self.singlePriceLabel.text = [NSString stringWithFormat:@"市场价：¥%@",projectModel.marketPrice];
+            self.cardPriceLabel.text = [NSString stringWithFormat:@"优惠价：¥%@",projectModel.vipPrice];
+            
+            self.countLabel.text = [NSString stringWithFormat:@"单次耗卡金额：¥%@",projectModel.singleConsumePrice];
+            
+            self.expirLabel.frame = CGRectMake(self.nameLabel.x, self.countLabel.bottom + 10, SCREEN_WIDTH, 30);
+            
+
+            self.expirLabel.text = [NSString stringWithFormat:@"过期时间：%d个月",projectModel.expirCount];
+            
+            self.introduceLabel.frame = CGRectMake(self.nameLabel.x, self.expirLabel.bottom + 10, SCREEN_WIDTH, 30);
+            
+            self.introduceLabel.text = @"功能介绍：";
+            
+            self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+            self.introduceTextView.text = projectModel.introduce;
+        }
+        else
+        {
+            self.singlePriceLabel.text = [NSString stringWithFormat:@"单次价：¥%@",projectModel.singlePrice];
+            self.cardPriceLabel.text = [NSString stringWithFormat:@"办卡价：¥%@",projectModel.cardPrice];
+            
+            self.countLabel.text = [NSString stringWithFormat:@"包含次数：%d",projectModel.count];
+            
+            self.introduceLabel.frame = CGRectMake(self.nameLabel.x, self.countLabel.bottom + 10, SCREEN_WIDTH, 30);
+            
+            self.introduceLabel.text = @"功能介绍：";
+            
+            self.introduceTextView.frame = CGRectMake(self.nameLabel.x, self.introduceLabel.bottom + 10, SCREEN_WIDTH - 20, 120);
+            self.introduceTextView.text = projectModel.introduce;
+
+        }
+        
+        self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.introduceTextView.bottom + 50);
         
         
     }
