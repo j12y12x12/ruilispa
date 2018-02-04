@@ -142,7 +142,7 @@
     
     self.nameLabel.frame = CGRectMake(self.iconImgView.right + 10, 20, 250, 30);
     self.singlePriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.nameLabel.bottom + 10, 120, 30);
-    self.cardPriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.singlePriceLabel.bottom + 10, 120, 30);
+    self.cardPriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.singlePriceLabel.bottom + 10, 200, 30);
 
     self.nameLabel.backgroundColor = [UIColor clearColor];
     self.singlePriceLabel.backgroundColor = [UIColor clearColor];
@@ -176,7 +176,7 @@
         else
         {
             self.singlePriceLabel.text = [NSString stringWithFormat:@"单次 ¥%@",projectModel.singlePrice];
-            self.cardPriceLabel.text = [NSString stringWithFormat:@"办卡 ¥%@",projectModel.cardPrice];
+            self.cardPriceLabel.text = [NSString stringWithFormat:@"办卡 ¥%@/%d次",projectModel.cardPrice,projectModel.count];
         }
         
         
