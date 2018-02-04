@@ -133,7 +133,7 @@
     
     UILabel *hearderLabel = [[UILabel alloc] init];
     
-    hearderLabel.frame = CGRectMake(10, 9, SCREEN_WIDTH - 20, 20);
+    hearderLabel.frame = CGRectMake(25, 9, SCREEN_WIDTH - 20, 20);
     
     hearderLabel.font = [UIFont systemFontOfSize:13];
     
