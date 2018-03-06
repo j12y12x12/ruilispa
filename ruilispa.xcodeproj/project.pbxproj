@@ -23,8 +23,9 @@
 		910456962018D04C007F0F6C /* face1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910456922018D04C007F0F6C /* face1.jpg */; };
 		910456972018D04C007F0F6C /* face2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 910456932018D04C007F0F6C /* face2.jpeg */; };
 		910456982018D04C007F0F6C /* face4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 910456942018D04C007F0F6C /* face4.jpeg */; };
-		9104569B2018D0E5007F0F6C /* ruili.db in Resources */ = {isa = PBXBuildFile; fileRef = 9104569A2018D0E5007F0F6C /* ruili.db */; };
 		9104569E2018D177007F0F6C /* YXProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9104569D2018D177007F0F6C /* YXProjectTableViewCell.m */; };
+		912AF8BA204ED4B9008F81DA /* ruili.db in Resources */ = {isa = PBXBuildFile; fileRef = 912AF8B9204ED4B8008F81DA /* ruili.db */; };
+		912AF8BC204ED4C4008F81DA /* shoudiao.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 912AF8BB204ED4C4008F81DA /* shoudiao.jpeg */; };
 		914EB856200D986B007E6EE4 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB846200D986B007E6EE4 /* FMDatabaseQueue.m */; };
 		914EB857200D986B007E6EE4 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB849200D986B007E6EE4 /* FMDatabaseAdditions.m */; };
 		914EB858200D986B007E6EE4 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 914EB84A200D986B007E6EE4 /* FMDatabase.m */; };
@@ -118,9 +119,10 @@
 		910456922018D04C007F0F6C /* face1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = face1.jpg; sourceTree = "<group>"; };
 		910456932018D04C007F0F6C /* face2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = face2.jpeg; sourceTree = "<group>"; };
 		910456942018D04C007F0F6C /* face4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = face4.jpeg; sourceTree = "<group>"; };
-		9104569A2018D0E5007F0F6C /* ruili.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ruili.db; sourceTree = "<group>"; };
 		9104569C2018D177007F0F6C /* YXProjectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXProjectTableViewCell.h; sourceTree = "<group>"; };
 		9104569D2018D177007F0F6C /* YXProjectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXProjectTableViewCell.m; sourceTree = "<group>"; };
+		912AF8B9204ED4B8008F81DA /* ruili.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = ruili.db; sourceTree = "<group>"; };
+		912AF8BB204ED4C4008F81DA /* shoudiao.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shoudiao.jpeg; sourceTree = "<group>"; };
 		914EB845200D986B007E6EE4 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		914EB846200D986B007E6EE4 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		914EB847200D986B007E6EE4 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		910456782018D02B007F0F6C /* projectImg */ = {
 			isa = PBXGroup;
 			children = (
+				912AF8BB204ED4C4008F81DA /* shoudiao.jpeg */,
 				910456922018D04C007F0F6C /* face1.jpg */,
 				910456932018D04C007F0F6C /* face2.jpeg */,
 				910456912018D04C007F0F6C /* face3.jpeg */,
@@ -379,7 +382,7 @@
 		91E18FF520134C3C00706125 /* db */ = {
 			isa = PBXGroup;
 			children = (
-				9104569A2018D0E5007F0F6C /* ruili.db */,
+				912AF8B9204ED4B8008F81DA /* ruili.db */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -572,10 +575,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				916EF46C200E3D7D001CBB6D /* LaunchScreen.storyboard in Resources */,
+				912AF8BC204ED4C4008F81DA /* shoudiao.jpeg in Resources */,
 				91E18FCE2012E34600706125 /* ImageShow_Back.png in Resources */,
 				917811AB2026BD76008C65F0 /* WechatIMG6.jpeg in Resources */,
+				912AF8BA204ED4B9008F81DA /* ruili.db in Resources */,
 				9104568D2018D03F007F0F6C /* timg-5.jpeg in Resources */,
-				9104569B2018D0E5007F0F6C /* ruili.db in Resources */,
 				910456952018D04C007F0F6C /* face3.jpeg in Resources */,
 				917811B32026BD76008C65F0 /* WechatIMG15.jpeg in Resources */,
 				91E18FDD2012FDE700706125 /* defaultImg.jpeg in Resources */,
@@ -816,13 +820,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 52567B56W3;
+				DEVELOPMENT_TEAM = 7K9Y2T37HD;
 				INFOPLIST_FILE = ruilispa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.rlmr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -832,13 +838,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 52567B56W3;
+				DEVELOPMENT_TEAM = 7K9Y2T37HD;
 				INFOPLIST_FILE = ruilispa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.ruilispa.ruilispa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruili.rlmr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
