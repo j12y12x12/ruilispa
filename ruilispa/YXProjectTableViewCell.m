@@ -141,7 +141,7 @@
 
     
     self.nameLabel.frame = CGRectMake(self.iconImgView.right + 10, 20, 250, 30);
-    self.singlePriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.nameLabel.bottom + 10, 120, 30);
+    self.singlePriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.nameLabel.bottom + 10, 180, 30);
     self.cardPriceLabel.frame = CGRectMake(self.iconImgView.right + 10, self.singlePriceLabel.bottom + 10, 200, 30);
 
     self.nameLabel.backgroundColor = [UIColor clearColor];
